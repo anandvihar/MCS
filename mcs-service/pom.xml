@@ -28,6 +28,12 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 		</dependency>
+		<!-- JCS Cache -->
+		<dependency>
+          <groupId>jcs</groupId>
+          <artifactId>jcs</artifactId>
+         <version>20030822.182132</version>
+      </dependency>
 		<!-- JDBC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
