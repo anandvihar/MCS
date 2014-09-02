@@ -10,5 +10,10 @@
 		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	<context:component-scan base-package="mcs.controller" />
 	
-
+	
+	<!-- JCS configuration -->
+	<bean id="JCSCacheFactoryBeanImpl" class="mcs.service.cache.JCSCacheFactoryBean">
+		<property name="configLocation" value="/cache.ccf" />
+		<!-- <property name="region"><value>customerCache</value></property>  -->
+    </bean>
 </beans>
