@@ -3,7 +3,9 @@ package mcs.controller.admin.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminResponse {
+import mcs.rest.framework.Response;
+
+public class AdminResponse extends Response{
 private String name;
 private List<String> abc;
 
