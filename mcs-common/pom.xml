@@ -3,5 +3,5 @@
   <groupId>mcs-common</groupId>
   <artifactId>common</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>common</name>
+  <name>mcs-common</name>
 </project>
