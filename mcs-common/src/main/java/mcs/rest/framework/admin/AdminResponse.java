@@ -1,4 +1,4 @@
-package mcs.controller.admin.model;
+package mcs.rest.framework.admin;
 
 import java.util.ArrayList;
 import java.util.List;

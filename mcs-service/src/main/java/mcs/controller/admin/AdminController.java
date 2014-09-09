@@ -1,6 +1,6 @@
 package mcs.controller.admin;
 
-import mcs.controller.admin.model.AdminResponse;
+import mcs.rest.framework.admin.AdminResponse;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

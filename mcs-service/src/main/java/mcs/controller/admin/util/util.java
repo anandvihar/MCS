@@ -2,7 +2,7 @@ package mcs.controller.admin.util;
 
 import java.io.IOException;
 
-import mcs.controller.admin.model.AdminRequest;
+import mcs.rest.framework.admin.AdminRequest;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
