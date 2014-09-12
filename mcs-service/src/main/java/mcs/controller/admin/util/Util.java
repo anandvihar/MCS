@@ -8,7 +8,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class util {
+public class Util {
 
 	public static AdminRequest mapRequestObj(String body) {
 	AdminRequest reqObj = null;
