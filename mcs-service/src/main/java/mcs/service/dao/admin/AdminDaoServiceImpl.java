@@ -3,6 +3,7 @@ package mcs.service.dao.admin;
 import java.sql.Types;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.transaction.annotation.Transactional;
 
 public class AdminDaoServiceImpl implements AdminDaoService{
 
@@ -13,6 +14,7 @@ public class AdminDaoServiceImpl implements AdminDaoService{
 	 this.jdbcTemplate = jdbcTemplate;
 	}
 	
+	@Transactional
 	public int insertUser(String username, int id) {
 		 String inserQuery = "insert into test (id, name) values (?, ?) ";
 		 Object[] params = new Object[] { id,username };
