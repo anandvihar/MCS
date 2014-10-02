@@ -1,10 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+              "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+              <html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-
+	 xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 <h:head>
 
@@ -14,16 +15,16 @@
     <title>MCS</title>
 
     <!-- Bootstrap Core CSS -->
-    <h:outputStylesheet href="css/bootstrap.min.css" ></h:outputStylesheet>
+    <h:outputStylesheet library="css" name="bootstrap.min.css" ></h:outputStylesheet>
 
     <!-- MetisMenu CSS -->
-    <h:outputStylesheet href="css/plugins/metisMenu/metisMenu.min.css" ></h:outputStylesheet>
+    <h:outputStylesheet library="css" name="plugins/metisMenu/metisMenu.min.css" ></h:outputStylesheet>
 
     <!-- Custom CSS -->
-    <h:outputStylesheet href="css/sb-admin-2.css"></h:outputStylesheet>
+    <h:outputStylesheet library="css" name="sb-admin-2.css"></h:outputStylesheet>
 
     <!-- Custom Fonts -->
-    <h:outputStylesheet href="font-awesome-4.1.0/css/font-awesome.min.css" ></h:outputStylesheet>
+    <h:outputStylesheet library="font-awesome-4.1.0" name="css/font-awesome.min.css" ></h:outputStylesheet>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,52 +35,23 @@
 
 </h:head>
 
-<body>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
-                    </div>
-                    <div class="panel-body">
-                       <h:form> 
-                            <fieldset>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                    </label>
-                                </div>
-                                <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
-                            </fieldset>
-                        </h:form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<h:body>
+<div>
+			<ui:insert name="content">Main Content</ui:insert>
+		</div>
+  
     <!-- jQuery Version 1.11.0 -->
-    <h:outputScript library="js" name="js/jquery-1.11.0.js"></h:outputScript>
+    <h:outputScript library="js" name="jquery-1.11.0.js"></h:outputScript>
 
     <!-- Bootstrap Core JavaScript -->
-    <h:outputScript library="js" name="js/bootstrap.min.js"></h:outputScript>
+    <h:outputScript library="js" name="bootstrap.min.js"></h:outputScript>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <h:outputScript library="js" name="js/plugins/metisMenu/metisMenu.min.js"></h:outputScript>
+    <h:outputScript library="js" name="plugins/metisMenu/metisMenu.min.js"></h:outputScript>
 
     <!-- Custom Theme JavaScript -->
-    <h:outputScript library="js" name="js/sb-admin-2.js"></h:outputScript>
+    <h:outputScript library="js" name="sb-admin-2.js"></h:outputScript>
 
-</body>
+</h:body>
 
 </html>
