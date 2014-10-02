@@ -1,5 +1,5 @@
 package mcs.rest.framework;
 
-public class Request {
+public class Request extends Session{
 
 }

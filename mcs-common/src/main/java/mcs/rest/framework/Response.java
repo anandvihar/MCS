@@ -1,6 +1,6 @@
 package mcs.rest.framework;
 
-public class Response {
+public class Response extends Session{
 
 	private long code;
 	private String statusMessage;

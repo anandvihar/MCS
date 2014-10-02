@@ -1,6 +1,9 @@
 package mcs.service.test;
 
+import java.util.UUID;
+
 import mcs.service.dao.admin.AdminDaoServiceImpl;
+
 
 
 import org.springframework.context.ApplicationContext;
@@ -11,7 +14,7 @@ public class Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+		/*ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
 				"database-mgmt.xml");
 	AdminDaoServiceImpl dao = applicationContext.getBean("adminDao", AdminDaoServiceImpl.class);
 	
@@ -34,6 +37,13 @@ public class Test {
 	test.bookCache.putInGroup("5", "session", "req1");
 	test.bookCache.getGroupKeys("session");
 	*/
+		
+		System.out.println(UUID.nameUUIDFromBytes("sahil".getBytes()).toString());
+		System.out.println(UUID.nameUUIDFromBytes("sahil".getBytes()).toString());
+		System.out.println(UUID.nameUUIDFromBytes("sahil".getBytes()).toString());
+		
+		//System.out.println(UUID.fromString("Sahil").toString());
+		
 	}
 
 }
