@@ -1,5 +1,7 @@
 package mcs.rest.framework.admin;
 
-public class AdminRequest {
+import mcs.rest.framework.Request;
+
+public class AdminRequest extends Request {
 
 }
