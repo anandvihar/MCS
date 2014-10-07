@@ -1,5 +1,6 @@
 package mcs.controller.admin;
 
+import mcs.rest.framework.admin.AdminRequest;
 import mcs.rest.framework.admin.AdminResponse;
 
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,7 +33,8 @@ public class AdminController {
 	 * */
 	@RequestMapping(value = "/authenticate", method = RequestMethod.GET, headers = "Accept=application/json")
 	public AdminResponse authenticateUser(@RequestBody Object request) {
-		System.out.println("hello");
+		AdminRequest adminRequest=new AdminRequest();
+	
 		AdminResponse resp = new AdminResponse();
 		resp.setName("Sahil");
 		return resp;
