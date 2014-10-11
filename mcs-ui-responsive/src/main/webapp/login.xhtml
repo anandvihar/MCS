@@ -18,11 +18,11 @@
 							<h:form>
 								<fieldset>
 									<div class="form-group">
-										<input class="form-control" placeholder="E-mail" name="email"
+										<input class="form-control" placeholder="Username" name="username" id="username"
 											type="email" autofocus="true"></input>
 									</div>
 									<div class="form-group">
-										<input class="form-control" placeholder="Password"
+										<input class="form-control" placeholder="Password" is="password" 
 											name="password" type="password" value=""></input>
 									</div>
 									<!--<div class="checkbox">
@@ -42,7 +42,17 @@
 		</div>
 		<h:outputScript library="js" name="jquery-1.11.0.js"></h:outputScript>
 		<script>
-    $('#login').on('click',function(){alert("sahil")});
+    $('#login').on('click',function(){
+    	$.ajax({
+    		type:'POST',
+    		url:'loginServlet',
+    		dataType: 'json',
+    	    data: {username: $('#username').val(),
+    	    	password: $('#password').val() }})
+    	        .done  (function(data, textStatus, jqXHR)        { alert("Success: " + response) ; })
+    	        .fail  (function(jqXHR, textStatus, errorThrown) { alert("Error")   ; })
+    	  ;
+    	});
     </script>
 	</ui:define>
 </ui:composition>

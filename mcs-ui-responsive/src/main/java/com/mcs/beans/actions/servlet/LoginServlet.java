@@ -1,15 +1,21 @@
 package com.mcs.beans.actions.servlet;
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mcs.rest.framework.admin.AdminRequest;
+import mcs.rest.framework.admin.pojo.LoginDetails;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/LoginServlet")
+@WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,7 +38,16 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
- System.out.println("Sahil");
+ 
+ 	request.getParameter("username");
+ 	AdminRequest adminRequest=new AdminRequest();
+ 	LoginDetails loginDetails=new LoginDetails();
+ 	loginDetails.setUsername(request.getParameter("username"));
+ 	loginDetails.setPassword(request.getParameter("passowrd"));
+ 	ObjectMapper mapper = new ObjectMapper();
+ 	response.setContentType("application/json");            
+ //	mapper.writeValue(response.getOutputStream(), articles);
+ 
 	}
 
 }

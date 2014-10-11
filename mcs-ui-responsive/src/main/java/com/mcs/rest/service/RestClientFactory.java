@@ -50,4 +50,27 @@ public class RestClientFactory {
 	return obj;
 }
 
+
+	public Object getClient(String clientType, String method, String queryParamter) {
+
+	Object obj = null;
+	String serviceContext = com.mcs.util.Utils.getResourceInstance().get(Constants.SERVICE_URL).toString();
+	String url = serviceContext.concat(method).concat("/").concat(queryParamter);
+	LOGGER.info("MCS service URL: " + serviceContext);
+
+	if (Constants.POST_REQUEST_STRING.equalsIgnoreCase(clientType)) {
+		obj = new HttpPost(url);
+	} else if (Constants.GET_REQUEST_STRING
+			.equalsIgnoreCase(clientType)) {
+		obj = new HttpGet(url);
+	} else if (Constants.DELETE_REQUEST_STRING
+			.equalsIgnoreCase(clientType)) {
+		obj = new HttpDelete(url);
+	} else if (Constants.PUT_REQUEST_STRING
+			.equalsIgnoreCase(clientType)) {
+		obj = new HttpPut(url);
+	}
+	return obj;
+}
+
 }
