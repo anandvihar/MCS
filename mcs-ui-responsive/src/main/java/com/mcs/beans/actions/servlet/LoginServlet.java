@@ -11,6 +11,8 @@ import mcs.rest.framework.admin.AdminRequest;
 import mcs.rest.framework.admin.pojo.LoginDetails;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mcs.rest.service.AdminServiceAdapter;
+import com.mcs.rest.service.AdminServiceAdapterImpl;
 
 /**
  * Servlet implementation class LoginServlet
@@ -38,12 +40,13 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
- 
+ AdminServiceAdapter adminServiceAdapter=new AdminServiceAdapterImpl();
  	AdminRequest adminRequest=new AdminRequest();
  	LoginDetails loginDetails=new LoginDetails();
  	loginDetails.setUsername(request.getParameter("username"));
  	loginDetails.setPassword(request.getParameter("passowrd"));
- 	
+ 	adminRequest.setLoginDetails(loginDetails);
+ 	adminServiceAdapter.authenticateUser(adminRequest);
  	ObjectMapper mapper = new ObjectMapper();
  	response.setContentType("application/json");            
  //	mapper.writeValue(response.getOutputStream(), articles);

@@ -8,14 +8,18 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-	<context:component-scan base-package="mcs" />
+	<context:component-scan base-package="mcs.*" />
 	<context:annotation-config/>
-	<import resource="database-mgmt.xml" />
-	
+<!-- 	<import resource="database-mgmt.xml" />
+	 -->
 	
 	<!-- JCS configuration -->
-	<bean id="JCSCacheFactoryBeanImpl" class="mcs.service.cache.JCSCacheFactoryBean">
-		<property name="configLocation" value="/cache.ccf" />
-		<!-- <property name="region"><value>customerCache</value></property>  -->
-    </bean>
+<!-- 	<bean id="JCSCacheFactoryBeanImpl" class="mcs.service.cache.JCSCacheFactoryBean">
+		<property name="configLocation" value="/resources/cache.ccf" />
+		<property name="region"><value>customerCache</value></property>  
+    </bean>  -->
+    
+    <bean id="adminService" class="mcs.controller.admin.service.AdminService" />
+    <bean id="adminHelper" class="mcs.controller.admin.helper.AdminHelper" />
+    
 </beans>

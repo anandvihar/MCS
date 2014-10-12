@@ -5,6 +5,7 @@ import mcs.rest.framework.admin.AdminRequest;
 import mcs.rest.framework.admin.AdminResponse;
 import mcs.rest.util.ObjectMapperUtil;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/admin/")
 public class AdminController {
 	
+	@Autowired
 	private AdminService adminService;
 
 	/**
@@ -39,7 +41,7 @@ public class AdminController {
 	public AdminResponse authenticateUser(@RequestBody String request) {
 		AdminRequest adminRequest=(AdminRequest) ObjectMapperUtil.mapRequestObj(request,AdminRequest.class);
 		AdminResponse resp=adminService.checkAuthentication(adminRequest);
-		
+		System.out.println("in authenticate method"+adminRequest.getLoginDetails().getUsername());
 		resp.setName("Sahil");
 		return resp;
 	}
