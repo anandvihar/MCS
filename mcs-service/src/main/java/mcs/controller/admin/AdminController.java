@@ -35,7 +35,7 @@ public class AdminController {
 	 * 
 	 * 
 	 * */
-	@RequestMapping(value = "/authenticate", method = RequestMethod.GET, headers = "Accept=application/json")
+	@RequestMapping(value = "/authenticate", method = RequestMethod.POST, headers = "Accept=application/json")
 	public AdminResponse authenticateUser(@RequestBody String request) {
 		AdminRequest adminRequest=(AdminRequest) ObjectMapperUtil.mapRequestObj(request,AdminRequest.class);
 		AdminResponse resp=adminService.checkAuthentication(adminRequest);

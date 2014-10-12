@@ -20,14 +20,8 @@ public class RestServiceHelper {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(RestServiceHelper.class);
 
-	public AdminResponse sendRequest(AdminRequest request,
-			String restClientURL, String requestType, String requestData) {
-
-		RestClientFactory restClient = RestClientFactory.getInstance();
-		ServiceExecutorFactory serviceExecutorFactory = ServiceExecutorFactory
-				.getInstance();
-		Object resp = serviceCommunication(restClientURL, requestType,
-				requestData, restClient, serviceExecutorFactory,AdminResponse.class);
+	public AdminResponse sendAdminRequest(AdminRequest request,String requestType, String requestService) {
+		Object resp = serviceCommunication(request, requestType,requestService,AdminResponse.class);
 		if(resp instanceof AdminResponse){
 			return (AdminResponse)resp;
 		}else{
@@ -36,21 +30,23 @@ public class RestServiceHelper {
 		
 	}
 
-	private Object serviceCommunication(String restClientURL,
-			String requestType, String requestData,
-			RestClientFactory restClient,
-			ServiceExecutorFactory serviceExecutorFactory,Class responseType) {
+	private Object serviceCommunication(Object requestData
+			,String requestType,String requestService,Class responseType) {
+		ServiceExecutorFactory serviceExecutorFactory = ServiceExecutorFactory
+				.getInstance();
+
 		ObjectMapper objectMap = new ObjectMapper();
 		Object resp=null;
 		String jsonResponse = null;
+		RestClientFactory restClient = RestClientFactory.getInstance();
 		try {
 			if (requestType.equalsIgnoreCase(Constants.GET_REQUEST_STRING)) {
 				jsonResponse = serviceExecutorFactory.getResponse(restClient
-						.getClient(requestType, restClientURL, requestData));
+						.getClient(Constants.GET_REQUEST_STRING,requestService));
 			} else {
 				String jsonData = objectMap.writeValueAsString(requestData);
 				jsonResponse = serviceExecutorFactory.getResponse(
-						restClient.getClient(requestType, restClientURL),
+						restClient.getClient(requestType, requestService),
 						jsonData);
 			}
 			resp =  ObjectMapperUtil.mapRequestObj(jsonResponse, responseType);

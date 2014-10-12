@@ -39,11 +39,11 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
  
- 	request.getParameter("username");
  	AdminRequest adminRequest=new AdminRequest();
  	LoginDetails loginDetails=new LoginDetails();
  	loginDetails.setUsername(request.getParameter("username"));
  	loginDetails.setPassword(request.getParameter("passowrd"));
+ 	
  	ObjectMapper mapper = new ObjectMapper();
  	response.setContentType("application/json");            
  //	mapper.writeValue(response.getOutputStream(), articles);
