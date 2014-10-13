@@ -22,7 +22,7 @@ public class Utils {
 	private static Properties createUIResourceProperties(){
 		Properties propAppResource = new Properties();
 		try {
-			propAppResource.load(Utils.class.getResourceAsStream("/com/headstrong/npi/raas/ui/RaasUIProps.properties"));
+			propAppResource.load(Utils.class.getResourceAsStream("/com/mcs/MCSUI.properties"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

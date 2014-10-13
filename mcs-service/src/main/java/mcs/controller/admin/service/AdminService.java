@@ -5,7 +5,6 @@ import mcs.rest.framework.admin.AdminRequest;
 import mcs.rest.framework.admin.AdminResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 
 public class AdminService {
