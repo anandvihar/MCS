@@ -5,6 +5,10 @@ import java.util.List;
 
 import mcs.rest.framework.Response;
 
+/**
+ * @author sahil.kapoor
+ *
+ */
 public class AdminResponse extends Response{
 private String name;
 private List<String> abc;

@@ -7,6 +7,10 @@ import mcs.rest.framework.admin.AdminResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
+/**
+ * @author sahil.kapoor
+ *
+ */
 public class AdminService {
 
 	@Autowired

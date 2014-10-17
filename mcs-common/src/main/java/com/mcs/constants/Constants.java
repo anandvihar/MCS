@@ -1,5 +1,9 @@
 package com.mcs.constants;
 
+/**
+ * @author sahil.kapoor
+ *
+ */
 public class Constants {
 
 	//Configuration constants

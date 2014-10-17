@@ -1,5 +1,9 @@
 package mcs.rest.framework;
 
+/**
+ * @author sahil.kapoor
+ *
+ */
 public class Response extends Session{
 
 	private long code;

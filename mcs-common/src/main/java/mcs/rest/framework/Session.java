@@ -2,6 +2,10 @@ package mcs.rest.framework;
 
 import java.util.Map;
 
+/**
+ * @author sahil.kapoor
+ *
+ */
 public class Session {
 
 	private static String sessionId;

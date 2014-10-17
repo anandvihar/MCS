@@ -3,6 +3,10 @@ package mcs.rest.framework.admin;
 import mcs.rest.framework.Request;
 import mcs.rest.framework.admin.pojo.LoginDetails;
 
+/**
+ * @author sahil.kapoor
+ *
+ */
 public class AdminRequest extends Request {
 
 	

@@ -1,5 +1,9 @@
 package mcs.rest.framework.admin.pojo;
 
+/**
+ * @author sahil.kapoor
+ *
+ */
 public class LoginDetails {
 
 	private String username;

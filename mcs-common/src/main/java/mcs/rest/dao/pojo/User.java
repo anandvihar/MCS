@@ -1,5 +1,9 @@
 package mcs.rest.dao.pojo;
 
+/**
+ * @author sahil.kapoor
+ *
+ */
 public class User {
 
 	private String name;
