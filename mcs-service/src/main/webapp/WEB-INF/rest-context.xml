@@ -15,9 +15,13 @@
 	
 	
 	<!-- JCS configuration -->
-	<bean id="jcsCacheFactoryBeanImpl" class="mcs.service.cache.JCSCacheFactoryBeanImpl">
-		<property name="configLocation" value="classpath:cache.ccf" />
-		<!-- <property name="region"><value>customerCache</value></property> -->  
+	<bean id="jcsCacheFactoryBean" class="mcs.service.cache.JCSCacheFactoryBean">
+		<constructor-arg type="java.lang.String" value="classpath:cache.ccf" />
+			<constructor-arg type="java.lang.String" value="default" />
+				<constructor-arg type="java.lang.String" value="session" />
+		<!-- <property name="configLocation" value="classpath:cache.ccf" />
+		 <property name="defaultRegion" value="default" />
+		 <property name="sessionRegion" value="session" />  -->
     </bean> 
     
     <bean id="adminService" class="mcs.controller.admin.service.AdminService" />

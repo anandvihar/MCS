@@ -12,8 +12,7 @@ public class JCSCacheFactoryBean {
 	private JCS defaultCache;
 	private JCS sessionCache;
 	private String configLocation;
-	private String defaultRegion;
-	private String sessionRegion;
+	
 	
 	public JCS getSessionCache() {
 		return sessionCache;
@@ -23,27 +22,19 @@ public class JCSCacheFactoryBean {
 		return defaultCache;
 	}
 
-	
-	private JCSCacheFactoryBean(){
+	//http://springtips.blogspot.in/2008/05/pragmatic-caching-simple-cache.html
+	public JCSCacheFactoryBean(String configLocation,String defaultRegion,String sessionRegion){
 		this.setConfigLocation(configLocation);
 		try {
-			defaultCache=JCS.getInstance(this.defaultRegion);
-			sessionCache=JCS.getInstance(this.sessionRegion);
+			defaultCache=JCS.getInstance(defaultRegion);
+			sessionCache=JCS.getInstance(sessionRegion);
 		} catch (CacheException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 	}
 	
-	public void setDefaultRegion(String defaultRegion) {
-		this.defaultRegion = defaultRegion;
-	}
 
-	public void setSessionRegion(String sessionRegion) {
-		this.sessionRegion = sessionRegion;
-	}
 
 	public void setConfigLocation(String configLocation) {
 		this.configLocation = configLocation;
