@@ -26,8 +26,10 @@ public class JCSCacheFactoryBean {
 	public JCSCacheFactoryBean(String configLocation,String defaultRegion,String sessionRegion){
 		this.setConfigLocation(configLocation);
 		try {
-			defaultCache=JCS.getInstance(defaultRegion);
-			sessionCache=JCS.getInstance(sessionRegion);
+			this.defaultCache=JCS.getInstance(defaultRegion);
+			this.sessionCache=JCS.getInstance(sessionRegion);
+			this.sessionCache.put("sahil", "kapoor");
+			System.out.println(this.sessionCache.get("sahil"));
 		} catch (CacheException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
