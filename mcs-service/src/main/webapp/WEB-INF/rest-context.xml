@@ -10,10 +10,7 @@
 		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	<context:component-scan base-package="mcs.*" />
 	<context:annotation-config/>
-	
- 	<import resource="classpath:database-mgmt.xml" />
-	
-	
+	<import resource="classpath:database-mgmt.xml" />
 	<!-- JCS configuration -->
 	<bean id="jcsCacheFactoryBean" class="mcs.service.cache.JCSCacheFactoryBean">
 		<constructor-arg type="java.lang.String" value="classpath:cache.ccf" />
@@ -23,8 +20,8 @@
 		 <property name="defaultRegion" value="default" />
 		 <property name="sessionRegion" value="session" />  -->
     </bean> 
-    
     <bean id="adminService" class="mcs.controller.admin.service.AdminService" />
     <bean id="adminHelper" class="mcs.controller.admin.helper.AdminHelper" />
-    
+    <bean id="jcsCacheService" class="mcs.service.cache.JCSCacheServiceImpl" />
+    <bean id="sessionService" class=" mcs.service.sessionManagement.SessionService" />  
 </beans>
