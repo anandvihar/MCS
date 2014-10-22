@@ -14,6 +14,7 @@ public class JCSCacheFactoryBean {
 			.getLogger(JCSCacheFactoryBean.class);
 	private JCS defaultCache;
 	private JCS sessionCache;
+	
 	private String configLocation;
 
 	/**
@@ -40,7 +41,7 @@ public class JCSCacheFactoryBean {
 	// http://springtips.blogspot.in/2008/05/pragmatic-caching-simple-cache.html
 	public JCSCacheFactoryBean(String configLocation, String defaultRegion,
 			String sessionRegion) {
-		this.setConfigLocation(configLocation);
+		this.configLocation = configLocation;
 		try {
 			this.defaultCache = JCS.getInstance(defaultRegion);
 			LOGGER.debug("Default cache status", defaultCache.getStats());
@@ -50,10 +51,6 @@ public class JCSCacheFactoryBean {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	public void setConfigLocation(String configLocation) {
-		this.configLocation = configLocation;
 	}
 
 }
