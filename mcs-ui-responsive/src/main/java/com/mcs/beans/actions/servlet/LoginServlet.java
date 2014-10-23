@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import mcs.rest.framework.admin.AdminRequest;
+import mcs.rest.framework.admin.AdminResponse;
 import mcs.rest.framework.admin.pojo.LoginDetails;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -46,11 +47,10 @@ public class LoginServlet extends HttpServlet {
  	loginDetails.setUsername(request.getParameter("username"));
  	loginDetails.setPassword(request.getParameter("passowrd"));
  	adminRequest.setLoginDetails(loginDetails);
- 	adminServiceAdapter.authenticateUser(adminRequest);
+ 	AdminResponse adminResponse=adminServiceAdapter.authenticateUser(adminRequest);
  	ObjectMapper mapper = new ObjectMapper();
  	response.setContentType("application/json");            
- //	mapper.writeValue(response.getOutputStream(), articles);
- 
+ 	response.getWriter().write(mapper.writeValueAsString(adminResponse));
 	}
 
 }

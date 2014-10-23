@@ -49,7 +49,7 @@
     		dataType: 'json',
     	    data: {username: $('#username').val(),
     	    	password: $('#password').val() }})
-    	        .done  (function(data, textStatus, jqXHR)        { alert("Success: " + response) ; })
+    	        .done  (function(data, textStatus, jqXHR)        { alert("Success: " + data.seesionId) ; })
     	        .fail  (function(jqXHR, textStatus, errorThrown) { alert("Error")   ; })
     	  ;
     	});
