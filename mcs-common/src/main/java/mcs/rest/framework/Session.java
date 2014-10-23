@@ -8,23 +8,19 @@ import java.util.Map;
  */
 public class Session {
 
-	private static String sessionId;
-	private static Map<String, Object> sessionAttributes;
-
-	public static String getSessionId() {
+	private String sessionId;
+	private  Map<String, Object> sessionAttributes;
+	public String getSessionId() {
 		return sessionId;
 	}
-
-	public static void setSessionId(String sessionId) {
-		Session.sessionId = sessionId;
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
 	}
-
-	public static Map<String, Object> getSessionInfo() {
+	public Map<String, Object> getSessionAttributes() {
 		return sessionAttributes;
 	}
-
-	public static void setSessionInfo(Map<String, Object> sessionInfo) {
-		Session.sessionAttributes = sessionInfo;
+	public void setSessionAttributes(Map<String, Object> sessionAttributes) {
+		this.sessionAttributes = sessionAttributes;
 	}
 
 }

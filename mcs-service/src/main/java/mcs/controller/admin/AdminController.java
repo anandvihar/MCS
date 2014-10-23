@@ -5,6 +5,7 @@ import mcs.rest.framework.admin.AdminRequest;
 import mcs.rest.framework.admin.AdminResponse;
 import mcs.rest.util.ObjectMapperUtil;
 
+import org.apache.jcs.access.exception.CacheException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,11 +39,12 @@ public class AdminController {
 
 	/**
 	 * To authenticate the user 
+	 * @throws CacheException 
 	 * 
 	 * 
 	 * */
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST, headers = "Accept=application/json")
-	public AdminResponse authenticateUser(@RequestBody String request) {
+	public AdminResponse authenticateUser(@RequestBody String request) throws CacheException {
 		AdminRequest adminRequest=(AdminRequest) ObjectMapperUtil.mapRequestObj(request,AdminRequest.class);
 		AdminResponse resp=adminService.checkAuthentication(adminRequest);
 		System.out.println("in authenticate method"+adminRequest.getLoginDetails().getUsername());

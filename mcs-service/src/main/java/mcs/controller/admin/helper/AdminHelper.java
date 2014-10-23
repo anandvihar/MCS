@@ -1,6 +1,11 @@
 package mcs.controller.admin.helper;
 
+import org.apache.jcs.access.exception.CacheException;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import mcs.rest.framework.Session;
 import mcs.rest.framework.admin.pojo.LoginDetails;
+import mcs.service.sessionManagement.SessionService;
 
 
 /**
@@ -8,13 +13,14 @@ import mcs.rest.framework.admin.pojo.LoginDetails;
  *
  */
 public class AdminHelper {
-
+	@Autowired
+	private SessionService sessionService; 
 	
 	public boolean isUserAutheticated(LoginDetails loginDetails){
-		return false;
+		return true;
 	}
 
-	public String createSessionId(){
-		return null;
+	public Session createSession(LoginDetails loginDetails) throws CacheException{
+		return sessionService.createSession(loginDetails.getUsername());
 	}
 }

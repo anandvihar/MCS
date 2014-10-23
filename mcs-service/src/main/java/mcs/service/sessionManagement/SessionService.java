@@ -3,6 +3,8 @@ package mcs.service.sessionManagement;
 import java.util.HashMap;
 import java.util.Map;
 
+import mcs.controller.admin.util.Util;
+import mcs.rest.framework.Session;
 import mcs.service.cache.JCSCacheFactoryBean;
 import mcs.service.cache.JCSCacheSerivce;
 
@@ -86,4 +88,13 @@ public class SessionService {
 		}
 
 	}
+	
+	public Session createSession(String username) throws CacheException{
+		Session session=new Session();
+		String sessionId=Util.generateUniqueKey(username);
+		this.putSessionObjects(sessionId, new HashMap<String, Object>());
+	 	session.setSessionId(sessionId);
+		return session;
+	}
+	
 }
