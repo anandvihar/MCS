@@ -25,4 +25,7 @@ public class Constants {
 	
 	//Errors
 	
+	//Screen Navigation
+	public final static String FROM_LOGIN_SCREEN = "fromLogin";
+	
 }
