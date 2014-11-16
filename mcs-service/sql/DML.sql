@@ -1,0 +1,1 @@
+INSERT INTO `MCS`.`users` (`name`, `user_id`, `password`, `email`, `phone_no`, `designation`, `location`, `role`, `company`) VALUES ('admin', 'admin', 'admin', 'admin@abc.com', '9810402070', 'designation', 'delhi', 'role', 'mcs');

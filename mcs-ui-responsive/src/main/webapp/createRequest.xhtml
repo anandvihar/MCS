@@ -30,23 +30,25 @@
 								<div class="col-md-6">
 									
 										<div class="form-group">
-											<label>Machine Name</label> <select class="form-control">
-												<option>Machine name 1</option>
-												<option>Machine name 2</option>
-												<option>Machine name 3</option>
-												<option>Machine name 4</option>
-												<option>Machine name5</option>
+											<label>Machine Name</label>
+											 <select id="machineName" class="form-control">
+												<option value="">Machine name 1</option>
+												<option value="">Machine name 2</option>
+												<option value="">Machine name 3</option>
+												<option value="">Machine name 4</option>
+												<option value="">Machine name5</option>
 											</select>
 											<p class="help-block">Select machine name from the drop
 												down</p>
 										</div>
 										<div class="form-group">
-											<label>Machine Section</label> <select class="form-control">
-												<option>Section Name 1</option>
-												<option>Section Name 2</option>
-												<option>Section Name 3</option>
-												<option>Section Name 4</option>
-												<option>Section name 5</option>
+											<label>Machine Section</label> 
+											<select id="sectioName" class="form-control">
+												<option value="">Section Name 1</option>
+												<option value="">Section Name 2</option>
+												<option value="">Section Name 3</option>
+												<option value="">Section Name 4</option>
+												<option value="">Section name 5</option>
 											</select>
 											<p class="help-block">Select section name from the drop
 												down</p>
@@ -89,11 +91,11 @@
 											</div>
 											<div class="form-group col-md-5">
 												<label>Designation</label> <select class="form-control">
-													<option>Section Name 1</option>
-													<option>Section Name 2</option>
-													<option>Section Name 3</option>
-													<option>Section Name 4</option>
-													<option>Section name 5</option>
+													<option  value="">Section Name 1</option>
+													<option  value="">Section Name 2</option>
+													<option  value="">Section Name 3</option>
+													<option  value="">Section Name 4</option>
+													<option  value="">Section name 5</option>
 												</select>
 											</div>
 
@@ -104,7 +106,9 @@
 												placeholder="Brief desciption about the issue"></textarea>
 										</div>
 										<h:commandButton 
-										 styleClass="btn btn-success" value="Submit" action="#{createNewRequest.action(success)}">
+										 styleClass="btn btn-success" value="Submit" action="#{createNewRequest.action}">
+										 <f:param name="action" value="create" />
+										 <f:param name="action" value="#{sessionId}" />
 											</h:commandButton>
 										<a href="dashboard.jsf?sessionId=#{sessionId}" class="btn btn-danger">Cancel
 											</a>

@@ -24,4 +24,6 @@
     <bean id="adminHelper" class="mcs.controller.admin.helper.AdminHelper" />
     <bean id="jcsCacheService" class="mcs.service.cache.JCSCacheServiceImpl" />
     <bean id="sessionService" class=" mcs.service.sessionManagement.SessionService" />  
+    <bean id="staticDataService" class="mcs.controller.staticData.service.StaticDataService" />
+    <bean id="staticDataHelper" class="mcs.controller.staticData.service.StaticDataHelper" />
 </beans>

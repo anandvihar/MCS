@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import mcs.rest.framework.admin.AdminRequest;
 import mcs.rest.framework.admin.AdminResponse;
 import mcs.rest.framework.admin.pojo.LoginDetails;
+import mcs.rest.util.Constants;
 
 import org.springframework.util.StringUtils;
 
@@ -59,6 +60,7 @@ public class LoginServlet extends HttpServlet {
 		if (!StringUtils.isEmpty(adminResponse.getSessionId())) {
 			request.getSession(true)
 					.setAttribute("sessionId", adminResponse.getSessionId());
+			request.getSession().setAttribute(Constants.USER_SESSION_ATTRIBUTE_KEY, adminResponse.getUser());
 			System.out.println(request.getSession().getAttribute("sessionId"));
 		}
 		ObjectMapper mapper = new ObjectMapper();

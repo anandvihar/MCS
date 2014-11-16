@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
-    xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="
 http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
@@ -14,7 +13,7 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 
-<tx:annotation-driven  transaction-manager="transactionManager"/>
+	<tx:annotation-driven transaction-manager="transactionManager" />
 
 
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
@@ -23,7 +22,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		<property name="url" value="jdbc:mysql://localhost:3306/MCS" />
 		<property name="username" value="root" />
 		<property name="password" value="root" />
-<!--DB Connection Pooling -->
+		<!--DB Connection Pooling -->
 		<property name="maxTotal" value="20" />
 		<property name="maxIdle" value="8" />
 		<property name="defaultAutoCommit" value="false" />
@@ -31,15 +30,17 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		<property name="removeAbandonedOnBorrow" value="true" />
 	</bean>
 	<bean id="transactionManager"
-  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-  <property name="dataSource" ref="dataSource"></property>
-</bean>
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	<bean id="adminDao" class="mcs.service.dao.admin.AdminDaoServiceImpl">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
-
+	<bean id="staticDataDao" class="mcs.service.dao.staticData.StaticDataDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
 
 </beans>

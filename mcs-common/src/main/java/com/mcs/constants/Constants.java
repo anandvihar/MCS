@@ -27,5 +27,9 @@ public class Constants {
 	
 	//Screen Navigation
 	public final static String FROM_LOGIN_SCREEN = "fromLogin";
+	public final static String FROM_CREATE_NEW_REQUEST = "fromCreateNewRequest";
+	public final static String SCREEN_OUTCOME_FAILURE = "failure";
+	public final static String SCREEN_OUTCOME_SUCCESS = "success";
+	
 	
 }

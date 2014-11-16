@@ -13,6 +13,9 @@ public class User {
 	private String role;
 	private String company;
 	private String location;
+	private String email;
+	private String phoneNo;
+	
 	public String getName() {
 		return name;
 	}
@@ -54,6 +57,18 @@ public class User {
 	}
 	public void setLocation(String location) {
 		this.location = location;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPhoneNo() {
+		return phoneNo;
+	}
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
 	}
 	
 	
