@@ -25,7 +25,7 @@ public class AdminHelper {
 	private AdminDaoService adminDao;
 	
 	public boolean isUserAutheticated(LoginDetails loginDetails){
-		return true;
+		return adminDao.authenticateUser(loginDetails.getUsername(), loginDetails.getPassword());
 	}
 
 	public Session createSession(LoginDetails loginDetails) throws CacheException{

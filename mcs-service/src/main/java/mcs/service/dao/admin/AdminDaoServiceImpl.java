@@ -26,11 +26,22 @@ public class AdminDaoServiceImpl implements AdminDaoService {
 		int[] types = new int[] { Types.INTEGER, Types.VARCHAR };
 		return jdbcTemplate.update(inserQuery, params, types);
 	}
-
+@Override
 	public User getUserByUserId(String userId) {
 		String sql = "Select name,user_id,designation,role,company,location,email,phone_no from users where user_id=?";
 		User user = jdbcTemplate.queryForObject(sql, new Object[] { userId },
 				new userRowMpper());
 		return user;
+	}
+	@Override
+	public boolean authenticateUser(String userId,String password) {
+		boolean result=false;
+		String sql = "Select count(*) from users where user_id=? and password=?";
+		int count = jdbcTemplate.queryForObject(sql, new Object[] { userId,password },
+				Integer.class);
+		if (count>0){
+			result=true;
+		}
+		return result; 
 	}
 }

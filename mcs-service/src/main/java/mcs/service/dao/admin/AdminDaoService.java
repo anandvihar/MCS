@@ -10,4 +10,6 @@ public interface AdminDaoService {
 
 	public User getUserByUserId(String userId);
 	
+	public boolean authenticateUser(String userId,String password);
+	
 }
