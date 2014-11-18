@@ -3,6 +3,7 @@ package mcs.service.dao.admin;
 import java.sql.Types;
 
 import mcs.rest.dao.pojo.User;
+import mcs.service.dao.admin.rowmapper.userRowMpper;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;

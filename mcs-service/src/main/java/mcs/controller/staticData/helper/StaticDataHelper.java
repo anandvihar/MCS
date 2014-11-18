@@ -7,9 +7,14 @@ import mcs.rest.dao.pojo.Machines;
 import mcs.rest.dao.pojo.Sections;
 import mcs.service.cache.JCSCacheFactoryBean;
 import mcs.service.cache.JCSCacheSerivce;
+import mcs.service.dao.staticData.StaticDataDao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ * @author sahil.kapoor
+ *
+ */
 public class StaticDataHelper {
 
 	@Autowired
@@ -17,7 +22,9 @@ public class StaticDataHelper {
 
 	@Autowired
 	private JCSCacheSerivce jcsCacheSerivce;
-
+@Autowired
+	private StaticDataDao staticDataDao;
+	
 	public ArrayList<Machines> getMachines(){
 		return new ArrayList<Machines>();
 	}

@@ -1,4 +1,4 @@
-package mcs.service.dao.admin;
+package mcs.service.dao.admin.rowmapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
