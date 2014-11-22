@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import mcs.rest.framework.admin.AdminRequest;
 import mcs.rest.framework.admin.AdminResponse;
+import mcs.rest.framework.staticData.StaticDataRequest;
+import mcs.rest.framework.staticData.StaticDataResponse;
 import mcs.rest.util.ObjectMapperUtil;
 
 import org.slf4j.Logger;
@@ -29,7 +31,15 @@ public class RestServiceHelper {
 		}
 		
 	}
-
+	public StaticDataResponse sendStaticDataRequest(StaticDataRequest request,String requestType, String requestService) {
+		Object resp = serviceCommunication(request, requestType,requestService,StaticDataResponse.class);
+		if(resp instanceof StaticDataResponse){
+			return (StaticDataResponse)resp;
+		}else{
+			return null;
+		}
+		
+	}
 	private Object serviceCommunication(Object requestData
 			,String requestType,String requestService,Class responseType) {
 		ServiceExecutorFactory serviceExecutorFactory = ServiceExecutorFactory

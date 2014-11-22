@@ -5,23 +5,19 @@ package mcs.rest.dao.pojo;
  *
  */
 public class Designations {
-	private String names;
-	private String altNames;
-
-	public String getNames() {
-		return names;
+	private String name;
+	private String altName;
+	public String getName() {
+		return name;
 	}
-
-	public void setNames(String names) {
-		this.names = names;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public String getAltNames() {
-		return altNames;
+	public String getAltName() {
+		return altName;
 	}
-
-	public void setAltNames(String altNames) {
-		this.altNames = altNames;
+	public void setAltName(String altName) {
+		this.altName = altName;
 	}
 
 }

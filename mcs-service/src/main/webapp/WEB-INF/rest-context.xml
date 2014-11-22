@@ -25,5 +25,5 @@
     <bean id="jcsCacheService" class="mcs.service.cache.JCSCacheServiceImpl" />
     <bean id="sessionService" class=" mcs.service.sessionManagement.SessionService" />  
     <bean id="staticDataService" class="mcs.controller.staticData.service.StaticDataService" />
-    <bean id="staticDataHelper" class="mcs.controller.staticData.service.StaticDataHelper" />
+    <bean id="staticDataHelper" class="mcs.controller.staticData.helper.StaticDataHelper" />
 </beans>

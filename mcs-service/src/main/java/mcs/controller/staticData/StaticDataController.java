@@ -21,10 +21,24 @@ public class StaticDataController {
 	private StaticDataService staticDataService;
 	
 	@RequestMapping(value = "/machines", method = RequestMethod.GET, headers = "Accept=application/json")
-	public StaticDataResponse checkUserName(@RequestBody String request) {
-		System.out.println("hello");
+	public StaticDataResponse getMahcines(@RequestBody String request) {
 		StaticDataResponse resp = new StaticDataResponse();
+		resp.setMachinesList(staticDataService.getMachineList());
 		return resp;
 	}
 
+	@RequestMapping(value = "/sections", method = RequestMethod.GET, headers = "Accept=application/json")
+	public StaticDataResponse getSections(@RequestBody String request) {
+		StaticDataResponse resp = new StaticDataResponse();
+		resp.setSectionsList(staticDataService.getSectionsList());
+		return resp;
+	}
+	
+	@RequestMapping(value = "/designations", method = RequestMethod.GET, headers = "Accept=application/json")
+	public StaticDataResponse getDesigations(@RequestBody String request) {
+		StaticDataResponse resp = new StaticDataResponse();
+		resp.setDesignationsList(staticDataService.getDesignations());
+		return resp;
+	}
+	
 }

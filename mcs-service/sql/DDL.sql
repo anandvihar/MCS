@@ -17,7 +17,7 @@ CREATE  TABLE `MCS`.`users` (
   PRIMARY KEY (`machine_name`) );
   
   CREATE  TABLE `MCS`.`sections` (
-  `section_name` INT NOT NULL ,
+  `section_name` VARCHAR(45) NOT NULL ,
   `section_alt_name` VARCHAR(45) NULL ,
   PRIMARY KEY (`section_name`) );
   
@@ -35,6 +35,17 @@ CREATE TABLE `MCS`.`designation` (
   `designation_alt_name` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`designation_name`)
 );
+
+
+CREATE  TABLE `MCS`.`user_role` (
+  `role_id` INT NOT NULL ,
+  `role_name` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`role_id`) );
+
+CREATE  TABLE `MCS`.`user_role_map` (
+  `user_id` INT NOT NULL ,
+  `role_id` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`user_id`, `role_id`) );
 
 
 

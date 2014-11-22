@@ -19,7 +19,7 @@ public class userRowMpper implements RowMapper<User> {
 		      user.setLocation(rs.getString("location"));
 		      user.setDesignaion(rs.getString("designation"));
 		      user.setEmail(rs.getString("email"));
-		      user.setPhoneNo(rs.getString("phonen_no"));
+		      user.setPhoneNo(rs.getString("phone_no"));
 		      return user;
 		   }
 

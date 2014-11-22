@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
 		AdminRequest adminRequest = new AdminRequest();
 		LoginDetails loginDetails = new LoginDetails();
 		loginDetails.setUsername(request.getParameter("username"));
-		loginDetails.setPassword(request.getParameter("passowrd"));
+		loginDetails.setPassword(request.getParameter("password"));
 		adminRequest.setLoginDetails(loginDetails);
 		AdminResponse adminResponse = adminServiceAdapter
 				.authenticateUser(adminRequest);

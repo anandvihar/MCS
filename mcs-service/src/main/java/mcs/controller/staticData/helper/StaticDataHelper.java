@@ -26,15 +26,15 @@ public class StaticDataHelper {
 	private StaticDataDao staticDataDao;
 	
 	public ArrayList<Machines> getMachines(){
-		return new ArrayList<Machines>();
+		return staticDataDao.getMachines();
 	}
 	
 	public ArrayList<Sections> getSections(){
-		return new ArrayList<Sections>();
+		return staticDataDao.getSectons();
 	}
 	
 	public ArrayList<Designations> getDesignations(){
-		return new ArrayList<Designations>();
+		return staticDataDao.getDesignations();
 	}
 	
 }

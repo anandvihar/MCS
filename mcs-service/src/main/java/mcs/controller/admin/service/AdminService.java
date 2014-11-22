@@ -27,7 +27,6 @@ public class AdminService {
 			adminResponse.setUser(adminHelper.getUserByUserId(adminRequest.getLoginDetails().getUsername()));
 			adminHelper.addAtributeToSession(adminResponse.getSessionId(),adminResponse.getUser(),Constants.USER_SESSION_ATTRIBUTE_KEY);
 		}
-		adminHelper.getUserByUserId(adminRequest.getLoginDetails().getUsername());
 		return adminResponse;
 	};
 

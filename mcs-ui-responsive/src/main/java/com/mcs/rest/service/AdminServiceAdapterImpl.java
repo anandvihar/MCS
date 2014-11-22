@@ -29,9 +29,11 @@ private static final long serialVersionUID = -2921461961479307888L;
 
 	
 	public AdminResponse authenticateUser(AdminRequest adminRequest){
+		LOGGER.info("Rest call for user authentication");
 		RestServiceHelper restServiceHelper=new RestServiceHelper();
 		return restServiceHelper.sendAdminRequest(adminRequest,Constants.POST_REQUEST_STRING,mcs.rest.util.Constants.AUTHENTICATE_USER_POST);
-		
+		 
 	}
 
+	
 }

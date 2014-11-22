@@ -31,12 +31,11 @@
 									
 										<div class="form-group">
 											<label>Machine Name</label>
-											 <select id="machineName" class="form-control">
-												<option value="">Machine name 1</option>
-												<option value="">Machine name 2</option>
-												<option value="">Machine name 3</option>
-												<option value="">Machine name 4</option>
-												<option value="">Machine name5</option>
+											<select id="machineName" class="form-control">
+											<ui:repeat var="var" value="#{newRequestStaticData.machines}">
+												<option value="#{var.machineId}">#{var.machineName}</option>
+												</ui:repeat>
+											 
 											</select>
 											<p class="help-block">Select machine name from the drop
 												down</p>
@@ -44,11 +43,10 @@
 										<div class="form-group">
 											<label>Machine Section</label> 
 											<select id="sectioName" class="form-control">
-												<option value="">Section Name 1</option>
-												<option value="">Section Name 2</option>
-												<option value="">Section Name 3</option>
-												<option value="">Section Name 4</option>
-												<option value="">Section name 5</option>
+											<ui:repeat var="var" value="#{newRequestStaticData.sections}">
+												<option value="#{var.sectionId}">#{var.sectionName}</option>
+												</ui:repeat>
+											
 											</select>
 											<p class="help-block">Select section name from the drop
 												down</p>
@@ -65,7 +63,7 @@
 													class="input-group-addon"><span
 													class="glyphicon glyphicon-calendar"></span></span>
 											</div>
-											<input type="hidden" id="dtp_input1" value="24-08-2014" /><br />
+											<input type="hidden" id="dtp_input1" value="" /><br />
 										</div>
 										<div class="form-group">
 											<label for="dtp_input2" class=" control-label">Time
@@ -91,11 +89,10 @@
 											</div>
 											<div class="form-group col-md-5">
 												<label>Designation</label> <select id="designation" class="form-control">
-													<option  value="">Section Name 1</option>
-													<option  value="">Section Name 2</option>
-													<option  value="">Section Name 3</option>
-													<option  value="">Section Name 4</option>
-													<option  value="">Section name 5</option>
+													<ui:repeat var="var" value="#{newRequestStaticData.designations}">
+												<option value="#{var.name}">#{var.name}</option>
+												</ui:repeat>
+											
 												</select>
 											</div>
 

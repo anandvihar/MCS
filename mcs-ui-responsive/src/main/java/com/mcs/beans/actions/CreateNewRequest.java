@@ -28,12 +28,12 @@ public class CreateNewRequest implements Serializable {
 		  String action = params.get("action");
 		  String sessionId=params.get("sessionId");
 		  if(!StringUtils.isEmpty(action) || !StringUtils.isEmpty(sessionId)){
-			  outcome=this.newRequest(sessionId);
+			  outcome=this.newRequest(sessionId,params);
 		  }
 		return outcome;
 	}
 	
-	private String newRequest(String sessionId){
+	private String newRequest(String sessionId, Map<String,String> params){
 		
 		return "";
 	} 
