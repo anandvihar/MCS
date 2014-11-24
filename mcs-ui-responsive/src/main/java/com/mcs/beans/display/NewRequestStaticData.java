@@ -1,5 +1,6 @@
 package com.mcs.beans.display;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.faces.bean.ManagedBean;
@@ -14,14 +15,19 @@ import com.mcs.rest.service.StaticDataServiceAdapterImpl;
 
 @ManagedBean(name = "newRequestStaticData")
 @ViewScoped
-public class NewRequestStaticData {
+public class NewRequestStaticData implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 942281860978869868L;
 
 	private StaticDataServiceAdapter staticDataServiceAdapter;
 
 	public ArrayList<Machines> machines;
 	public ArrayList<Sections> sections;
 	public ArrayList<Designations> designations;
-
+	
 	public StaticDataServiceAdapter getStaticDataServiceAdapter() {
 		return this.staticDataServiceAdapter = StaticDataServiceAdapterImpl
 				.getInstance();
@@ -33,8 +39,9 @@ public class NewRequestStaticData {
 	}
 
 	public ArrayList<Machines> getMachines() {
-		if (this.machines == null) {
-			this.machines = getStaticDataServiceAdapter().getMachines()
+		
+		if (machines == null) {
+			machines = getStaticDataServiceAdapter().getMachines()
 					.getMachinesList();
 		}
 		return machines;

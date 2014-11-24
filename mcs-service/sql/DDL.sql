@@ -30,7 +30,7 @@ ALTER TABLE `MCS`.`machines` ADD COLUMN `machine_id` VARCHAR(45) NOT NULL  AFTER
 , ADD PRIMARY KEY (`machine_id`) ;
 
 
-CREATE TABLE `MCS`.`designation` (
+CREATE TABLE `MCS`.`designations` (
   `designation_name` varchar(60) NOT NULL,
   `designation_alt_name` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`designation_name`)

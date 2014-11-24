@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.util.StringUtils;
 
@@ -27,6 +29,8 @@ public class CreateNewRequest implements Serializable {
 		 Map<String,String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
 		  String action = params.get("action");
 		  String sessionId=params.get("sessionId");
+		 HttpServletRequest req= (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+		System.out.println(req.getParameter("designation")+req.getParameter("description"));
 		  if(!StringUtils.isEmpty(action) || !StringUtils.isEmpty(sessionId)){
 			  outcome=this.newRequest(sessionId,params);
 		  }
@@ -35,6 +39,6 @@ public class CreateNewRequest implements Serializable {
 	
 	private String newRequest(String sessionId, Map<String,String> params){
 		
-		return "";
+		return "success";
 	} 
 }

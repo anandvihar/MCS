@@ -54,5 +54,8 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 		<mime-type>application/xhtml+xml</mime-type>
 	</mime-mapping>
 	
-  
+  <context-param>
+    <param-name>javax.faces.PARTIAL_STATE_SAVING</param-name>
+    <param-value>false</param-value>
+</context-param>
 </web-app>

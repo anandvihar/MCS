@@ -13,7 +13,7 @@
 		<slf4j.version>1.7.5</slf4j.version>
 		<war.name>mcs</war.name>
 		<java.compile.version>1.7</java.compile.version>
-		<jsf.version>2.1.0-b03</jsf.version>
+		<jsf.version>2.2.1</jsf.version>
 	</properties>
 
 	<dependencies>
@@ -40,13 +40,13 @@
 			<dependency>  
                 <groupId>com.sun.faces</groupId>  
                 <artifactId>jsf-api</artifactId>  
-                <version>2.1.0-b03</version>  
+                <version>2.2.1</version>  
                 <scope>provided</scope>  
            </dependency>  
            <dependency>  
                 <groupId>com.sun.faces</groupId>  
                 <artifactId>jsf-impl</artifactId>  
-                <version>2.1.0-b03</version>  
+                <version>2.2.1</version>  
                 <scope>provided
                </scope>  
            </dependency>  
