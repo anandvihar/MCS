@@ -59,9 +59,9 @@ public class LoginServlet extends HttpServlet {
 				.authenticateUser(adminRequest);
 		if (!StringUtils.isEmpty(adminResponse.getSessionId())) {
 			request.getSession(true)
-					.setAttribute("sessionId", adminResponse.getSessionId());
+					.setAttribute(Constants.SESSION_ID_KEY, adminResponse.getSessionId());
 			request.getSession().setAttribute(Constants.USER_SESSION_ATTRIBUTE_KEY, adminResponse.getUser());
-			System.out.println(request.getSession().getAttribute("sessionId"));
+			System.out.println(request.getSession().getAttribute(Constants.SESSION_ID_KEY));
 		}
 		ObjectMapper mapper = new ObjectMapper();
 		response.setContentType("application/json");
