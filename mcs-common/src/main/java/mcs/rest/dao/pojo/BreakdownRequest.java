@@ -2,7 +2,7 @@ package mcs.rest.dao.pojo;
 
 import java.sql.Timestamp;
 
-public class NewBreakdownRequest {
+public class BreakdownRequest {
 	
 	private Integer Id;
 	private String machineId;
