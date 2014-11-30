@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import mcs.rest.dao.pojo.BreakdownPriority;
 import mcs.rest.dao.pojo.Designations;
 import mcs.rest.dao.pojo.Machines;
 import mcs.rest.dao.pojo.Sections;
@@ -59,7 +60,19 @@ public class StaticDataDaoImpl implements StaticDataDao {
         return designations;
     }
 
-	
+	public ArrayList<BreakdownPriority> getBrekadownPriority(){
+		String query = "select * from breakdown_priority";
+		ArrayList<BreakdownPriority> breakDownPrioirties = new ArrayList<BreakdownPriority>();
+	    List<Map<String,Object>> priorityRows = jdbcTemplate.queryForList(query);
+        for(Map<String,Object> priorityRow: priorityRows){
+        	BreakdownPriority breakdownPriority = new BreakdownPriority();
+        	breakdownPriority.setPriorityId(Integer.parseInt(String.valueOf(priorityRow.get("priority_id"))));
+        	breakdownPriority.setPriorityLabel(String.valueOf(priorityRow.get("priority_label"))) ;
+        	breakDownPrioirties.add(breakdownPriority);
+        }
+        return breakDownPrioirties;
+
+	}
 	
 	}
 

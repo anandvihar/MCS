@@ -41,4 +41,10 @@ public class StaticDataController {
 		return resp;
 	}
 	
+	@RequestMapping(value = "/breakdownPriorities", method = RequestMethod.GET, headers = "Accept=application/json")
+	public StaticDataResponse getreakdownPriorities(@RequestBody String request) {
+		StaticDataResponse resp = new StaticDataResponse();
+		resp.setBreakdownPrioritiesList(staticDataService.getBreakdownPriorities());
+		return resp;
+	}
 }

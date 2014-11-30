@@ -6,3 +6,7 @@ INSERT INTO `MCS`.`designation` (`designation_name`, `designation_alt_name`) VAL
 INSERT INTO `MCS`.`designation` (`designation_name`, `designation_alt_name`) VALUES ('designation_name', 'designation_alt_name');
 
 INSERT INTO `MCS`.`sections` (`section_name`, `section_alt_name`) VALUES ('section_name', 'section_alt_name');
+
+INSERT INTO `MCS`.`breakdown_priority` (`priority_id`, `priority_label`) VALUES ('10', 'High');
+INSERT INTO `MCS`.`breakdown_priority` (`priority_id`, `priority_label`) VALUES ('20', 'Medium');
+INSERT INTO `MCS`.`breakdown_priority` (`priority_id`, `priority_label`) VALUES ('30', 'Low');

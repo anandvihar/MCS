@@ -6,6 +6,7 @@ import mcs.rest.framework.admin.AdminRequest;
 import mcs.rest.framework.admin.AdminResponse;
 import mcs.rest.framework.staticData.StaticDataRequest;
 import mcs.rest.framework.staticData.StaticDataResponse;
+import mcs.rest.util.Constants;
 import mcs.rest.util.ObjectMapperUtil;
 
 import org.slf4j.Logger;
@@ -14,7 +15,6 @@ import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mcs.constants.Constants;
 import com.mcs.rest.service.RestClientFactory;
 import com.mcs.rest.service.ServiceExecutorFactory;
 

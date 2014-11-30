@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 import mcs.rest.framework.staticData.StaticDataRequest;
 import mcs.rest.framework.staticData.StaticDataResponse;
+import mcs.rest.util.Constants;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.mcs.constants.Constants;
 import com.mcs.rest.service.util.RestServiceHelper;
 
 /**
@@ -59,4 +59,12 @@ public class StaticDataServiceAdapterImpl implements StaticDataServiceAdapter,
 				mcs.rest.util.Constants.GET_DESIGATIONS_GET);
 	}
 
+	@Override
+	public StaticDataResponse getBreakdownPriorities() {
+		LOGGER.info("Rest call for breakdown priorities");
+		RestServiceHelper restServiceHelper = new RestServiceHelper();
+		return restServiceHelper.sendStaticDataRequest(new StaticDataRequest(),
+				Constants.GET_REQUEST_STRING,
+				mcs.rest.util.Constants.GET_BREAKDOWN_PRIORITIES_GET);
+	}
 }

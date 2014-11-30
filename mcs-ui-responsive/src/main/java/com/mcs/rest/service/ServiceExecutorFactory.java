@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import mcs.rest.util.Constants;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.methods.HttpGet;
@@ -14,7 +16,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.mcs.constants.Constants;
+
+
+
 
 public class ServiceExecutorFactory {
 
@@ -93,7 +97,7 @@ public class ServiceExecutorFactory {
 
 				br = new BufferedReader(new InputStreamReader(
 						(response.getEntity().getContent()),
-						Constants.CHAR_SET_UTF8));
+						com.mcs.constants.Constants.CHAR_SET_UTF8));
 				while ((output = br.readLine()) != null) {
 					resp.append(output);
 					jsonResponse = resp.toString();
@@ -150,7 +154,7 @@ public class ServiceExecutorFactory {
 
 				br = new BufferedReader(new InputStreamReader(
 						(response.getEntity().getContent()),
-						Constants.CHAR_SET_UTF8));
+						com.mcs.constants.Constants.CHAR_SET_UTF8));
 				while ((output = br.readLine()) != null) {
 					resp.append(output);
 					jsonResponse = resp.toString();

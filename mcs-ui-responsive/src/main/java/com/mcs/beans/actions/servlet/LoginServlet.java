@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import mcs.rest.framework.admin.AdminRequest;
 import mcs.rest.framework.admin.AdminResponse;
 import mcs.rest.framework.admin.pojo.LoginDetails;
-import mcs.rest.util.Constants;
 
 import org.springframework.util.StringUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mcs.constants.Constants;
 import com.mcs.rest.service.AdminServiceAdapter;
 import com.mcs.rest.service.AdminServiceAdapterImpl;
 

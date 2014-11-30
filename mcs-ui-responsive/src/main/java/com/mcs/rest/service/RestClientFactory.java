@@ -1,5 +1,7 @@
 package com.mcs.rest.service;
 
+import mcs.rest.util.Constants;
+
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -7,7 +9,7 @@ import org.apache.http.client.methods.HttpPut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.mcs.constants.Constants;
+
 
 public class RestClientFactory {
 
@@ -31,7 +33,7 @@ public class RestClientFactory {
 	public Object getClient(String clientType, String method) {
 
 	Object obj = null;
-	String serviceContext = com.mcs.util.Utils.getResourceInstance().get(Constants.SERVICE_URL).toString();
+	String serviceContext = com.mcs.util.Utils.getResourceInstance().get(com.mcs.constants.Constants.SERVICE_URL).toString();
 	String url = serviceContext.concat(method);
 	LOGGER.info("MCS service URL: " + serviceContext);
 

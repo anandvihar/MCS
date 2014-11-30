@@ -2,6 +2,7 @@ package mcs.controller.staticData.helper;
 
 import java.util.ArrayList;
 
+import mcs.rest.dao.pojo.BreakdownPriority;
 import mcs.rest.dao.pojo.Designations;
 import mcs.rest.dao.pojo.Machines;
 import mcs.rest.dao.pojo.Sections;
@@ -22,19 +23,24 @@ public class StaticDataHelper {
 
 	@Autowired
 	private JCSCacheSerivce jcsCacheSerivce;
-@Autowired
+	@Autowired
 	private StaticDataDao staticDataDao;
-	
-	public ArrayList<Machines> getMachines(){
+
+	public ArrayList<Machines> getMachines() {
 		return staticDataDao.getMachines();
 	}
-	
-	public ArrayList<Sections> getSections(){
+
+	public ArrayList<Sections> getSections() {
 		return staticDataDao.getSectons();
 	}
-	
-	public ArrayList<Designations> getDesignations(){
+
+	public ArrayList<BreakdownPriority> getBrekadownPriority() {
+		return staticDataDao.getBrekadownPriority();
+	}
+
+	public ArrayList<Designations> getDesignations() {
 		return staticDataDao.getDesignations();
 	}
+
 	
 }

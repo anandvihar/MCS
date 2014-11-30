@@ -11,5 +11,6 @@ public interface StaticDataServiceAdapter {
 	public StaticDataResponse getMachines();
 	public StaticDataResponse getSections();
 	public StaticDataResponse getDesignations();
+	public StaticDataResponse getBreakdownPriorities();
 	
 }

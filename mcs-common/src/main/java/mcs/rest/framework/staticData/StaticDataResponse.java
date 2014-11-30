@@ -2,6 +2,7 @@ package mcs.rest.framework.staticData;
 
 import java.util.ArrayList;
 
+import mcs.rest.dao.pojo.BreakdownPriority;
 import mcs.rest.dao.pojo.Designations;
 import mcs.rest.dao.pojo.Machines;
 import mcs.rest.dao.pojo.Sections;
@@ -16,7 +17,7 @@ public class StaticDataResponse extends Response {
 	private ArrayList<Machines> machinesList;
 	private ArrayList<Sections> sectionsList;
 	private ArrayList<Designations> designationsList;
-
+	private ArrayList<BreakdownPriority> breakdownPrioritiesList;
 	public ArrayList<Machines> getMachinesList() {
 		return machinesList;
 	}
@@ -39,6 +40,15 @@ public class StaticDataResponse extends Response {
 
 	public void setDesignationsList(ArrayList<Designations> designationsList) {
 		this.designationsList = designationsList;
+	}
+
+	public ArrayList<BreakdownPriority> getBreakdownPrioritiesList() {
+		return breakdownPrioritiesList;
+	}
+
+	public void setBreakdownPrioritiesList(
+			ArrayList<BreakdownPriority> breakdownPrioritiesList) {
+		this.breakdownPrioritiesList = breakdownPrioritiesList;
 	}
 
 }

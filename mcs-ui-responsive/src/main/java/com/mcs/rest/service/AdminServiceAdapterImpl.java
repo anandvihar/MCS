@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 import mcs.rest.framework.admin.AdminRequest;
 import mcs.rest.framework.admin.AdminResponse;
+import mcs.rest.util.Constants;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.mcs.constants.Constants;
 import com.mcs.rest.service.util.RestServiceHelper;
 
 public class AdminServiceAdapterImpl implements Serializable, AdminServiceAdapter{

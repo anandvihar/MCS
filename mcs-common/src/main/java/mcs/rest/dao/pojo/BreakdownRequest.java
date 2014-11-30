@@ -2,12 +2,16 @@ package mcs.rest.dao.pojo;
 
 import java.sql.Timestamp;
 
+/**
+ * @author sahilkapoor
+ *
+ */
 public class BreakdownRequest {
 	
 	private Integer Id;
 	private String machineId;
 	private String sectionId;
-	private Timestamp breakdownScheduledTime;
+	private Timestamp breakdownDueDateTime;
 	private String requestedBy;
 	private String requestedDesignationId;
 	private String Description;
@@ -18,6 +22,7 @@ public class BreakdownRequest {
 	private Timestamp breakdownScheduledEndTime;
 	private Timestamp breakdownStartTime;
 	private Timestamp breakdownEndTime;
+	private Integer priorityId;
 	public Integer getId() {
 		return Id;
 	}
@@ -36,11 +41,12 @@ public class BreakdownRequest {
 	public void setSectionId(String sectionId) {
 		this.sectionId = sectionId;
 	}
-	public Timestamp getBreakdownScheduledTime() {
-		return breakdownScheduledTime;
+	
+	public Timestamp getBreakdownDueDateTime() {
+		return breakdownDueDateTime;
 	}
-	public void setBreakdownScheduledTime(Timestamp breakdownScheduledTime) {
-		this.breakdownScheduledTime = breakdownScheduledTime;
+	public void setBreakdownDueDateTime(Timestamp breakdownDueDateTime) {
+		this.breakdownDueDateTime = breakdownDueDateTime;
 	}
 	public String getRequestedBy() {
 		return requestedBy;
@@ -101,6 +107,12 @@ public class BreakdownRequest {
 	}
 	public void setBreakdownEndTime(Timestamp breakdownEndTime) {
 		this.breakdownEndTime = breakdownEndTime;
+	}
+	public Integer getPriorityId() {
+		return priorityId;
+	}
+	public void setPriorityId(Integer priorityId) {
+		this.priorityId = priorityId;
 	}
 
 	

@@ -46,6 +46,12 @@ CREATE  TABLE `MCS`.`user_role_map` (
   `user_id` INT NOT NULL ,
   `role_id` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`user_id`, `role_id`) );
+  
+  CREATE  TABLE `MCS`.`breakdown_priority` (
+  `priority_id` INT NOT NULL ,
+  `priority_label` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`priority_id`) );
+
 
 
 
