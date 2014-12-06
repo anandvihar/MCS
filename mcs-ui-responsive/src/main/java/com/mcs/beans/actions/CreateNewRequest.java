@@ -85,7 +85,7 @@ public class CreateNewRequest implements Serializable {
 					.getParameter("requestByDesignation"));
 			breakdownRequest.setStatus(Constants.STATUS_OPEN);
 			transactionalRequest.setBreakdownRequest(breakdownRequest);
-
+			
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

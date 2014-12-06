@@ -42,5 +42,9 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	<bean id="staticDataDao" class="mcs.service.dao.staticData.StaticDataDaoImpl">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
+	<bean id="workflowDao" class="mcs.service.dao.workflow.WorkflowDaoServiceImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+
 
 </beans>

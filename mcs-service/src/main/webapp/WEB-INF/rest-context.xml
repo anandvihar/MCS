@@ -26,4 +26,6 @@
     <bean id="sessionService" class=" mcs.service.sessionManagement.SessionService" />  
     <bean id="staticDataService" class="mcs.controller.staticData.service.StaticDataService" />
     <bean id="staticDataHelper" class="mcs.controller.staticData.helper.StaticDataHelper" />
+     <bean id="transactionalService" class="mcs.controller.transactional.service.TransactionService" />
+    <bean id="transactionalHelper" class="mcs.controller.transactional.helper.TransactionalHelper" />
 </beans>
