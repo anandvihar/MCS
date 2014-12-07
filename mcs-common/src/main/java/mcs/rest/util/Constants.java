@@ -28,4 +28,6 @@ public class Constants {
 	public static final String GET_DESIGATIONS_GET = "/staticData/designations";
 	public static final String GET_BREAKDOWN_PRIORITIES_GET = "/staticData/breakdownPriorities";
 	
+	
+	public static final String CREATE_NEW_REQUEST_POST="/transaction/createBreakdownRequest";
 }

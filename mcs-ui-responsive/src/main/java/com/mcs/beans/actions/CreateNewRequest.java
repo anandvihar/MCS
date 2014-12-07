@@ -3,6 +3,8 @@ package com.mcs.beans.actions;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
@@ -18,6 +20,8 @@ import mcs.rest.util.DateTimeUtil;
 import org.springframework.util.StringUtils;
 
 import com.mcs.constants.Constants;
+import com.mcs.rest.service.TransactionalServiceAdapter;
+import com.mcs.rest.service.TransactionalServiceAdapterImpl;
 
 @ManagedBean(name = "createNewRequest")
 @ViewScoped
@@ -45,6 +49,7 @@ public class CreateNewRequest implements Serializable {
 		return outcome;
 	}
 
+	@SuppressWarnings("unchecked")
 	private String newRequest(String sessionId, Map<String, String> params) {
 
 		HttpServletRequest req = (HttpServletRequest) FacesContext
@@ -66,6 +71,10 @@ public class CreateNewRequest implements Serializable {
 			TransactionalRequest transactionalRequest = new TransactionalRequest();
 			transactionalRequest.setSessionId((String) req.getSession()
 					.getAttribute(Constants.SESSION_ID_KEY));
+			Map<String,User> sessionAttribute=new HashMap<String, User>();
+			ArrayList<Map<String, User>> sessionAttributes=new ArrayList<Map<String,User>>(); 
+			sessionAttribute.put(Constants.USER_SESSION_ATTRIBUTE_KEY, (User) req.getSession()
+					.getAttribute(Constants.USER_SESSION_ATTRIBUTE_KEY));
 			BreakdownRequest breakdownRequest = new BreakdownRequest();
 			breakdownRequest.setMachineId(req.getParameter("machineName"));
 			breakdownRequest.setSectionId(req.getParameter("sectioName"));
@@ -85,7 +94,9 @@ public class CreateNewRequest implements Serializable {
 					.getParameter("requestByDesignation"));
 			breakdownRequest.setStatus(Constants.STATUS_OPEN);
 			transactionalRequest.setBreakdownRequest(breakdownRequest);
-			
+			transactionalRequest.setAbc(sessionAttribute);
+			TransactionalServiceAdapter transactionalServiceAdapter=TransactionalServiceAdapterImpl.getInstance();
+			transactionalServiceAdapter.createNewRequest(transactionalRequest);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

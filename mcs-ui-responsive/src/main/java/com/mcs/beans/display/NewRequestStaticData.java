@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
+import mcs.rest.dao.pojo.BreakdownPriority;
 import mcs.rest.dao.pojo.Designations;
 import mcs.rest.dao.pojo.Machines;
 import mcs.rest.dao.pojo.Sections;
@@ -27,6 +28,7 @@ public class NewRequestStaticData implements Serializable{
 	public ArrayList<Machines> machines;
 	public ArrayList<Sections> sections;
 	public ArrayList<Designations> designations;
+	public ArrayList<BreakdownPriority> breakdownPriorities;
 	
 	public StaticDataServiceAdapter getStaticDataServiceAdapter() {
 		return this.staticDataServiceAdapter = StaticDataServiceAdapterImpl
@@ -75,4 +77,17 @@ public class NewRequestStaticData implements Serializable{
 		this.designations = designations;
 	}
 
+	public ArrayList<BreakdownPriority> getBreakdownPriorities() {
+		if (this.designations == null) {
+			this.breakdownPriorities = getStaticDataServiceAdapter().getBreakdownPriorities().getBreakdownPrioritiesList();
+		}
+		return breakdownPriorities;
+	}
+
+	public void setBreakdownPriorities(
+			ArrayList<BreakdownPriority> breakdownPriorities) {
+		this.breakdownPriorities = breakdownPriorities;
+	}
+
+	
 }

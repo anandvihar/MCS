@@ -6,6 +6,8 @@ import mcs.rest.framework.admin.AdminRequest;
 import mcs.rest.framework.admin.AdminResponse;
 import mcs.rest.framework.staticData.StaticDataRequest;
 import mcs.rest.framework.staticData.StaticDataResponse;
+import mcs.rest.framework.transactional.TransactionalRequest;
+import mcs.rest.framework.transactional.TransactionalResponse;
 import mcs.rest.util.Constants;
 import mcs.rest.util.ObjectMapperUtil;
 
@@ -13,8 +15,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.json.WriterBasedJsonGenerator;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import com.mcs.rest.service.RestClientFactory;
 import com.mcs.rest.service.ServiceExecutorFactory;
 
@@ -40,6 +44,18 @@ public class RestServiceHelper {
 		}
 		
 	}
+	
+	public TransactionalResponse sendTransactionRequest(TransactionalRequest request,String requestType, String requestService) {
+		Object resp = serviceCommunication(request, requestType,requestService,TransactionalResponse.class);
+		if(resp instanceof TransactionalResponse){
+			return (TransactionalResponse)resp;
+		}else{
+			return null;
+		}
+		
+	}
+	
+	
 	private Object serviceCommunication(Object requestData
 			,String requestType,String requestService,Class responseType) {
 		ServiceExecutorFactory serviceExecutorFactory = ServiceExecutorFactory
@@ -54,7 +70,13 @@ public class RestServiceHelper {
 				jsonResponse = serviceExecutorFactory.getResponse(restClient
 						.getClient(Constants.GET_REQUEST_STRING,requestService));
 			} else {
-				String jsonData = objectMap.writeValueAsString(requestData);
+				String jsonData = "";
+				if(!(requestData instanceof TransactionalRequest)) {
+				 jsonData = objectMap.writeValueAsString(requestData);
+				}else{
+					ObjectWriter basedJsonGenerator=objectMap.writerWithType(TransactionalRequest.class);
+					jsonData=basedJsonGenerator.writeValueAsString(requestData);
+				}
 				jsonResponse = serviceExecutorFactory.getResponse(
 						restClient.getClient(requestType, requestService),
 						jsonData);

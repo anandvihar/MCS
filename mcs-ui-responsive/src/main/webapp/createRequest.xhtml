@@ -80,10 +80,10 @@
 											<input type="hidden" name="breakdownTime" id="dtp_input2" value="" /><br />
 										</div>
 										<div class="row  form-group col-md-12">
-										<label>Machine Section</label> 
+										<label>Priority</label> 
 											<select id="priority" name="priority" class="form-control">
-											<ui:repeat var="var" value="#{newRequestStaticData.sections}">
-												<option value="#{var.sectionId}">#{var.sectionName}</option>
+											<ui:repeat var="var" value="#{newRequestStaticData.breakdownPriorities}">
+												<option value="#{var.priorityId}">#{var.priorityLabel}</option>
 												</ui:repeat>
 											
 											</select>
