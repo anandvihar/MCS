@@ -1,7 +1,6 @@
 package mcs.rest.framework;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -18,18 +17,18 @@ public class Session implements Serializable{
 	 */
 	private static final long serialVersionUID = 6133448268504197879L;
 	private String sessionId;
-	private  ArrayList<Map<String, Object>> sessionAttributes;
+	private Map<String, Object> sessionAttributes;
 	public String getSessionId() {
 		return sessionId;
 	}
 	public void setSessionId(String sessionId) {
 		this.sessionId = sessionId;
 	}
-	public ArrayList<Map<String, Object>> getSessionAttributes() {
+	public Map<String, Object> getSessionAttributes() {
 		return sessionAttributes;
 	}
 	public void setSessionAttributes(
-			ArrayList<Map<String, Object>> sessionAttributes) {
+			Map<String, Object> sessionAttributes) {
 		this.sessionAttributes = sessionAttributes;
 	}
 	

@@ -71,8 +71,8 @@ public class CreateNewRequest implements Serializable {
 			TransactionalRequest transactionalRequest = new TransactionalRequest();
 			transactionalRequest.setSessionId((String) req.getSession()
 					.getAttribute(Constants.SESSION_ID_KEY));
-			Map<String,User> sessionAttribute=new HashMap<String, User>();
-			ArrayList<Map<String, User>> sessionAttributes=new ArrayList<Map<String,User>>(); 
+			HashMap<String,Object> sessionAttribute=new HashMap<String, Object>();
+			 
 			sessionAttribute.put(Constants.USER_SESSION_ATTRIBUTE_KEY, (User) req.getSession()
 					.getAttribute(Constants.USER_SESSION_ATTRIBUTE_KEY));
 			BreakdownRequest breakdownRequest = new BreakdownRequest();
@@ -94,7 +94,8 @@ public class CreateNewRequest implements Serializable {
 					.getParameter("requestByDesignation"));
 			breakdownRequest.setStatus(Constants.STATUS_OPEN);
 			transactionalRequest.setBreakdownRequest(breakdownRequest);
-			transactionalRequest.setAbc(sessionAttribute);
+			
+			transactionalRequest.setSessionAttributes(sessionAttribute);
 			TransactionalServiceAdapter transactionalServiceAdapter=TransactionalServiceAdapterImpl.getInstance();
 			transactionalServiceAdapter.createNewRequest(transactionalRequest);
 		} catch (ParseException e) {

@@ -31,7 +31,6 @@ public class AdminController {
 	 * */
 	@RequestMapping(value = "/checkUserName", method = RequestMethod.GET, headers = "Accept=application/json")
 	public AdminResponse checkUserName(@RequestBody String request) {
-		System.out.println("hello");
 		AdminResponse resp = new AdminResponse();
 		resp.setName("Sahil");
 		return resp;
@@ -48,7 +47,6 @@ public class AdminController {
 		AdminRequest adminRequest=(AdminRequest) ObjectMapperUtil.mapRequestObj(request,AdminRequest.class);
 		AdminResponse resp=adminService.checkAuthentication(adminRequest);
 		System.out.println("in authenticate method"+adminRequest.getLoginDetails().getUsername());
-		resp.setName("Sahil");
 		return resp;
 	}
 

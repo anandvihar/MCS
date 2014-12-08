@@ -27,14 +27,5 @@ public TransactionalRequest(){super();}
 		this.breakdownRequest = breakdownRequest;
 	}
 	
-	private Map<String,User> abc;
-
-	public Map<String, User> getAbc() {
-		return abc;
-	}
-
-	public void setAbc(Map<String, User> abc) {
-		this.abc = abc;
-	}
 	
 }
