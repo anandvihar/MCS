@@ -21,7 +21,7 @@ public class TransactionService {
 		TransactionalResponse resp=new TransactionalResponse();
 		transactionalHelper.getSessionAttributes(transactionalRequest.getSessionId());
 		resp.setSessionId(transactionalRequest.getSessionId());
-		resp.setNewBreakDownId(transactionalHelper.newBreakdownRequest(transactionalRequest.getBreakdownRequest()));
+		transactionalHelper.newBreakdownRequest(transactionalRequest.getBreakdownRequest());
 		return resp;
 		
 	}

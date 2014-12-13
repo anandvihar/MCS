@@ -18,5 +18,13 @@ public class Util {
 			return null;
 		}
 	}
+	
+	public static String ifNullRetrunEmpty(String str){
+		if(null != str && !str.isEmpty())
+			return str;
+		else 
+			return "";
+					
+	}
 
 }

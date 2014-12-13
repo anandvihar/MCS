@@ -26,7 +26,7 @@ public class TransactionalHelper {
 		
 	}
 	
-	public String newBreakdownRequest(BreakdownRequest breakdownRequest){
+	public boolean newBreakdownRequest(BreakdownRequest breakdownRequest){
 		return workflowDao.createBreakdownRequest(breakdownRequest);
 	} 
 	

@@ -52,6 +52,30 @@ CREATE  TABLE `MCS`.`user_role_map` (
   `priority_label` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`priority_id`) );
 
+  
+
+  
+CREATE TABLE `breakdown_requests` (
+  `id` int(11) NOT NULL,
+  `machine_id` varchar(60) DEFAULT NULL,
+  `section_id` varchar(60) DEFAULT NULL,
+  `breakdown_due_date_time` timestamp NULL DEFAULT NULL,
+  `requested_by` varchar(120) DEFAULT NULL,
+  `requested_designation_id` varchar(60) DEFAULT NULL,
+  `description` varchar(1000) DEFAULT NULL,
+  `created_by` varchar(120) DEFAULT NULL,
+  `creation_time` timestamp NULL DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `status_message` varchar(1000) DEFAULT NULL,
+  `breakdown_scheduled_end_time` timestamp NULL DEFAULT NULL,
+  `breakdown_start_time` timestamp NULL DEFAULT NULL,
+  `breakdown_end_time` timestamp NULL DEFAULT NULL,
+  `priority_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ;
+
+
+
 
 
 

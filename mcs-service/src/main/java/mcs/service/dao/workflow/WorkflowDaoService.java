@@ -8,6 +8,6 @@ import mcs.rest.dao.pojo.BreakdownRequest;
  */
 public interface WorkflowDaoService {
 	
-	public String createBreakdownRequest(BreakdownRequest breakdownRequest);
+	public boolean createBreakdownRequest(BreakdownRequest breakdownRequest);
 
 }
