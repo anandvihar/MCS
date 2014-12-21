@@ -1,5 +1,6 @@
 package com.mcs.constants;
 
+
 /**
  * @author sahil.kapoor
  *
@@ -30,6 +31,26 @@ public class Constants {
 		public final static String STATUS_OUTCOME_SUCCESS="success";
 		public final static String STATUS_OUTCOME_FAILURE="failure";
 		
+	//DB Rows
+		public final static String BREAKDOWN_COL_ID="id";
+		public final static String BREAKDOWN_COL_MACHINE_ID="machine_id";
+		public final static String BREAKDOWN_COL_MACHINE_NAME="machine_name";
+		public final static String BREAKDOWN_COL_SECTION_ID="section_id";
+		public final static String BREAKDOWN_COL_SECTION_NAME="section_name";
+		public final static String BREAKDOWN_COL_BREAKDOWN_DUE_DATE_TIME="breakdown_due_date_time";
+		public final static String BREAKDOWN_COL_REQUESTED_BY="requested_by";
+		public final static String BREAKDOWN_COL_REQUESTED_DESIGNATION_ID="requested_designation_id";
+		public final static String BREAKDOWN_COL_DESCRIPTION="description";
+		public final static String BREAKDOWN_COL_CREATED_BY="created_by";
+		public final static String BREAKDOWN_COL_CREATED_TIME="creation_time";
+		public final static String BREAKDOWN_COL_STATUS="status";
+		public final static String BREAKDOWN_COL_STATUS_MESSAGE="status_message";
+		public final static String BREAKDOWN_COL_BREAKDOWN_SCHEDULED_END_TIME="breakdown_scheduled_end_time";
+		public final static String BREAKDOWN_COL_BREAKDOWN_START_TIME="breakdown_start_time";
+		public final static String BREAKDOWN_COL_BREAKDOWN_END_TIME="breakdown_end_time";
+		public final static String BREAKDOWN_COL_PRIORITY_ID="priority_id";
+		public final static String BREAKDOWN_COL_PRIORITY_LABEL="priority_label";
 	
+
 	
 }

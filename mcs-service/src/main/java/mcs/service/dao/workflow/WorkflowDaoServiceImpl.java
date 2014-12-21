@@ -1,11 +1,18 @@
 package mcs.service.dao.workflow;
 
+import java.sql.Timestamp;
 import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import mcs.rest.dao.pojo.BreakdownRequest;
+import mcs.service.dao.workflow.rowmapper.BreakdownRequestRowMapper;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.mcs.constants.Constants;
 
 /**
  * @author sahil.kapoor
@@ -56,5 +63,80 @@ public class WorkflowDaoServiceImpl implements WorkflowDaoService {
 			
 	}
 
+	@Override
+	public BreakdownRequest getbreakdOwnrequestByID(String requestId) {
+		String sql = "Select * from breakdown_request_view where id=?";
+		BreakdownRequest breakdownRequest = jdbcTemplate.queryForObject(sql, new Object[] { requestId },
+				new BreakdownRequestRowMapper());
+		return breakdownRequest;
+	}
+	
+	@Override
+	public ArrayList<BreakdownRequest> getBreakDownRequests() {
+		ArrayList<BreakdownRequest> breakdownRequests=new ArrayList<BreakdownRequest>();
+		String sql = "Select * from breakdown_request_view";
+		List<Map<String,Object>> rows = jdbcTemplate.queryForList(sql);
+				
+		        for (Map row : rows) {
+		        	BreakdownRequest breakdownRequest = new BreakdownRequest();
+		        	breakdownRequest.setId(Integer.parseInt(String.valueOf(row.get(Constants.BREAKDOWN_COL_ID))));
+		            breakdownRequest.setMachineId(null !=row.get(Constants.BREAKDOWN_COL_MACHINE_ID) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_MACHINE_ID)) :"" );
+		            breakdownRequest.setMachineName(null !=row.get(Constants.BREAKDOWN_COL_MACHINE_NAME) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_MACHINE_NAME)) :"" );
+		            breakdownRequest.setSectionId(null !=row.get(Constants.BREAKDOWN_COL_SECTION_ID) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_SECTION_ID)) :"" );
+		            breakdownRequest.setSectionName(null !=row.get(Constants.BREAKDOWN_COL_SECTION_NAME) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_SECTION_NAME)) :"" );
+		            breakdownRequest.setBreakdownDueDateTime(Timestamp.valueOf((null !=row.get(Constants.BREAKDOWN_COL_BREAKDOWN_DUE_DATE_TIME) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_BREAKDOWN_DUE_DATE_TIME)) :"" )));
+		            breakdownRequest.setRequestedBy(null !=row.get(Constants.BREAKDOWN_COL_REQUESTED_BY) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_REQUESTED_BY)) :"" );
+		            breakdownRequest.setRequestedDesignationId(null !=row.get(Constants.BREAKDOWN_COL_REQUESTED_DESIGNATION_ID) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_REQUESTED_DESIGNATION_ID)) :"" );
+		            breakdownRequest.setDescription(null !=row.get(Constants.BREAKDOWN_COL_DESCRIPTION) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_DESCRIPTION)) :"" );
+		            breakdownRequest.setCreatedBy(null !=row.get(Constants.BREAKDOWN_COL_CREATED_BY) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_CREATED_BY)) :"" );
+		            breakdownRequest.setCreationTime(Timestamp.valueOf((null !=row.get(Constants.BREAKDOWN_COL_CREATED_TIME) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_CREATED_TIME)) :"" )));
+		            breakdownRequest.setStatus(null !=row.get(Constants.BREAKDOWN_COL_STATUS) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_STATUS)) :"" );
+		            breakdownRequest.setStatusMessage(null !=row.get(Constants.BREAKDOWN_COL_STATUS_MESSAGE) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_STATUS_MESSAGE)) :"" );
+		            breakdownRequest.setBreakdownScheduledEndTime(Timestamp.valueOf((null !=row.get(Constants.BREAKDOWN_COL_BREAKDOWN_SCHEDULED_END_TIME) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_BREAKDOWN_SCHEDULED_END_TIME)) :"" )));
+			        breakdownRequest.setBreakdownStartTime(Timestamp.valueOf((null !=row.get(Constants.BREAKDOWN_COL_BREAKDOWN_START_TIME) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_BREAKDOWN_START_TIME)) :"" )));
+				    breakdownRequest.setBreakdownEndTime(Timestamp.valueOf((null !=row.get(Constants.BREAKDOWN_COL_BREAKDOWN_END_TIME) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_BREAKDOWN_END_TIME)) :"" )));
+				    breakdownRequest.setPriorityId(Integer.parseInt(String.valueOf(row.get(Constants.BREAKDOWN_COL_PRIORITY_ID))));
+		            breakdownRequest.setPriorityLabel(null !=row.get(Constants.BREAKDOWN_COL_PRIORITY_LABEL) ?String.valueOf(row.get(Constants.BREAKDOWN_COL_PRIORITY_LABEL)) :"" );
+		            breakdownRequests.add(breakdownRequest);
+		        }
+		return breakdownRequests;
+	}
+
+	@Override
+	public boolean updateBreakdownRequest(BreakdownRequest breakdownRequest) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void createScheduledJobReq() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateScheduledJobReq() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getScheduledJobReqByjobId() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getScheduledJobReqsByMachineId() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getScheduledJobReqsByEndTime() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	
 }

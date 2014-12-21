@@ -94,7 +94,6 @@ public class CreateNewRequest implements Serializable {
 					.getParameter("requestByDesignation"));
 			breakdownRequest.setStatus(Constants.STATUS_OPEN);
 			transactionalRequest.setBreakdownRequest(breakdownRequest);
-			
 			transactionalRequest.setSessionAttributes(sessionAttribute);
 			TransactionalServiceAdapter transactionalServiceAdapter=TransactionalServiceAdapterImpl.getInstance();
 			transactionalServiceAdapter.createNewRequest(transactionalRequest);

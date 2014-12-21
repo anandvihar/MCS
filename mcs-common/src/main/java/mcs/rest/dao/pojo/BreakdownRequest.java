@@ -10,7 +10,9 @@ public class BreakdownRequest {
 	
 	private Integer Id;
 	private String machineId;
+	private String machineName;
 	private String sectionId;
+	private String sectionName;
 	private Timestamp breakdownDueDateTime;
 	private String requestedBy;
 	private String requestedDesignationId;
@@ -23,6 +25,9 @@ public class BreakdownRequest {
 	private Timestamp breakdownStartTime;
 	private Timestamp breakdownEndTime;
 	private Integer priorityId;
+	private String priorityLabel;
+	
+	
 	public Integer getId() {
 		return Id;
 	}
@@ -113,6 +118,24 @@ public class BreakdownRequest {
 	}
 	public void setPriorityId(Integer priorityId) {
 		this.priorityId = priorityId;
+	}
+	public String getMachineName() {
+		return machineName;
+	}
+	public void setMachineName(String machineName) {
+		this.machineName = machineName;
+	}
+	public String getSectionName() {
+		return sectionName;
+	}
+	public void setSectionName(String sectionName) {
+		this.sectionName = sectionName;
+	}
+	public String getPriorityLabel() {
+		return priorityLabel;
+	}
+	public void setPriorityLabel(String priorityLabel) {
+		this.priorityLabel = priorityLabel;
 	}
 
 	

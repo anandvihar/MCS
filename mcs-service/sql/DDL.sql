@@ -75,6 +75,36 @@ CREATE TABLE `breakdown_requests` (
 ) ;
 
 
+CREATE OR REPLACE VIEW `MCS`.`breakdown_request_view` AS 
+ select 
+    a.id,
+    a.machine_id,
+    b.machine_name,
+    a.section_id,
+    c.section_name,
+    a.breakdown_due_date_time,
+    a.requested_by,
+    a.requested_designation_id,
+    a.description,
+    a.created_by,
+    a.creation_time,
+    a.status,
+    a.status_message,
+    a.breakdown_scheduled_end_time,
+    a.breakdown_start_time,
+    a.breakdown_end_time,
+    a.priority_id,
+    e.priority_label
+from
+    breakdown_requests a
+        left outer join
+    machines b ON a.machine_id = b.machine_id
+        left outer join
+    sections c ON a.section_id = c.section_id
+        left outer join
+    breakdown_priority e ON a.priority_id = e.priority_id;
+;
+
 
 
 
