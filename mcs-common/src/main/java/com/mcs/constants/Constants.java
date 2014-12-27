@@ -50,7 +50,29 @@ public class Constants {
 		public final static String BREAKDOWN_COL_BREAKDOWN_END_TIME="breakdown_end_time";
 		public final static String BREAKDOWN_COL_PRIORITY_ID="priority_id";
 		public final static String BREAKDOWN_COL_PRIORITY_LABEL="priority_label";
-	
+		public final static String BREAKDOWN_COL_JOB_DONE_BY="job_done_by";
+		public final static String BREAKDOWN_COL_SPARES_REQUESTED="spares requested";
+		
+		
+		public final static String JOB_COL_ID="id";
+		public final static String JOB_COL_MACHINE_ID="machine_id";
+		public final static String JOB_COL_SECTION_ID="section_id";
+		public final static String JOB_COL_DATE_OF_OPENING="date_of_opening";
+		public final static String JOB_COL_REQUESTED_BY="requested_by";
+		public final static String JOB_COL_REQUEST_CREATED_BY="requested_created_by";
+		public final static String JOB_COL_TYPE_OF_PROBLEM="type_of_problem";
+		public final static String JOB_COL_DESC="problem_desc";
+		public final static String JOB_COL_SCOPE="scope";
+		public final static String JOB_COL_EST_RESOURCES="est_esources";
+		public final static String JOB_COL_EST_COMP_TIME="est_comp_time";
+		public final static String JOB_COL_EST_SPARES="est_spares";
+		public final static String JOB_COL_CENTRAL_EQUIP="central_equip";
+		public final static String JOB_COL_PRIORITY_ID="priority_id";
+		public final static String JOB_COL_ACTUAL_RESOURCES="actual_resource";
+		public final static String JOB_COL_ACTUAL_COMP_TIME="actual_comp_time";
+		public final static String JOB_COL_STATUS="status";
+		public final static String JOB_COL_COMP_STATUS_DESCRIPTION="comp_status_description";
+		public final static String JOB_COL_BREAKDOWN_REQ_ID="breakdown_req_id";
 
-	
+
 }

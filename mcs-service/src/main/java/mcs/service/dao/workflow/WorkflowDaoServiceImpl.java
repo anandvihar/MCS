@@ -193,7 +193,11 @@ public class WorkflowDaoServiceImpl implements WorkflowDaoService {
 				+ Constants.BREAKDOWN_COL_BREAKDOWN_END_TIME + "="
 				+ breakdownRequest.getBreakdownEndTime() + ", "
 				+ Constants.BREAKDOWN_COL_PRIORITY_ID + "="
-				+ breakdownRequest.getPriorityId() + "where id=? ";
+				+ breakdownRequest.getPriorityId() + " ,"
+				+ Constants.BREAKDOWN_COL_JOB_DONE_BY + "="
+				+ breakdownRequest.getJobDoneBy() +","
+				+ Constants.BREAKDOWN_COL_SPARES_REQUESTED+ "="
+				+ breakdownRequest.getSparesRequested() +" where id=? ";
 		int result = jdbcTemplate.update(sql,
 				new Object[] { breakdownRequest.getId() });
 		if (result > 0)
@@ -204,7 +208,7 @@ public class WorkflowDaoServiceImpl implements WorkflowDaoService {
 
 	@Override
 	public void createScheduledJobReq() {
-		// TODO Auto-generated method stub
+
 
 	}
 

@@ -74,6 +74,10 @@ CREATE TABLE `breakdown_requests` (
   PRIMARY KEY (`id`)
 ) ;
 
+ALTER TABLE `MCS`.`breakdown_requests` 
+ADD COLUMN `job_done_by` VARCHAR(100) NULL AFTER `priority_id`,
+ADD COLUMN `spares requested` VARCHAR(1000) NULL AFTER `job_done_by`;
+
 
 CREATE OR REPLACE VIEW `MCS`.`breakdown_request_view` AS 
  select 
@@ -104,6 +108,30 @@ from
         left outer join
     breakdown_priority e ON a.priority_id = e.priority_id;
 ;
+
+
+
+CREATE TABLE `MCS`.`planned_job` (
+  `id` INT NOT NULL,
+  `machine_id` VARCHAR(60) NULL,
+  `section_id` VARCHAR(60) NULL,
+  `date_of_opening` TIMESTAMP NULL,
+  `requested_by` VARCHAR(120) NULL,
+  `requested_created_by` VARCHAR(120) NULL,
+  `type_of_problem` VARCHAR(120) NULL,
+  `problem_desc` VARCHAR(1000) NULL,
+  `scope` VARCHAR(45) NULL,
+  `est_esources` VARCHAR(500) NULL,
+  `est_comp_time` TIMESTAMP NULL,
+  `est_spares` VARCHAR(1000) NULL,
+  `central_equip` VARCHAR(500) NULL,
+  `priority_id` INT(11) NULL,
+  `actual_resource` VARCHAR(500) NULL,
+  `actual_comp_time` TIMESTAMP NULL,
+  `status` VARCHAR(60) NULL,
+  `comp_status_description` VARCHAR(45) NULL,
+  `breakdown_req_id` INT NULL,
+  PRIMARY KEY (`id`));
 
 
 

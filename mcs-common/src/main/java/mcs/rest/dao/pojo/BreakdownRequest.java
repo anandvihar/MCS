@@ -26,6 +26,8 @@ public class BreakdownRequest {
 	private Timestamp breakdownEndTime;
 	private Integer priorityId;
 	private String priorityLabel;
+	private String jobDoneBy;
+	private String sparesRequested;
 	
 	
 	public Integer getId() {
@@ -136,6 +138,18 @@ public class BreakdownRequest {
 	}
 	public void setPriorityLabel(String priorityLabel) {
 		this.priorityLabel = priorityLabel;
+	}
+	public String getJobDoneBy() {
+		return jobDoneBy;
+	}
+	public void setJobDoneBy(String jobDoneBy) {
+		this.jobDoneBy = jobDoneBy;
+	}
+	public String getSparesRequested() {
+		return sparesRequested;
+	}
+	public void setSparesRequested(String sparesRequested) {
+		this.sparesRequested = sparesRequested;
 	}
 
 	
