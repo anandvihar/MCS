@@ -12,7 +12,7 @@ public interface WorkflowDaoService {
 	
 	public boolean createBreakdownRequest(BreakdownRequest breakdownRequest);
 
-	public BreakdownRequest getbreakdOwnrequestByID(String requestId);
+	public BreakdownRequest getbreakdownrequestByID(String requestId);
 
 	public ArrayList<BreakdownRequest> getBreakDownRequests();
 	

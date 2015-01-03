@@ -74,7 +74,7 @@ public class WorkflowDaoServiceImpl implements WorkflowDaoService {
 	}
 
 	@Override
-	public BreakdownRequest getbreakdOwnrequestByID(String requestId) {
+	public BreakdownRequest getbreakdownrequestByID(String requestId) {
 		String sql = "Select * from breakdown_request_view where id=?";
 		BreakdownRequest breakdownRequest = jdbcTemplate.queryForObject(sql,
 				new Object[] { requestId }, new BreakdownRequestRowMapper());

@@ -37,7 +37,7 @@ public class TransactionController {
 	
 
 	/**
-	 *  To check if user name exists or not
+	 *  
 	 * @param Username - String
 	 * @return true
 	 * @throws IOException 
@@ -48,6 +48,24 @@ public class TransactionController {
 	 * */
 	@RequestMapping(value = "/createBreakdownRequest", method = RequestMethod.POST, headers = "Accept=application/json")
 	public TransactionalResponse createBreakdownRequest(@RequestBody String request) throws JsonParseException, JsonMappingException, IOException, CacheException {
+		TransactionalResponse resp = new TransactionalResponse();
+		LOGGER.debug("In Transaction Controller");
+		TransactionalRequest transactionalRequest=(TransactionalRequest) ObjectMapperUtil.mapRequestObj(request,TransactionalRequest.class);
+		resp=transactionalService.createNewBreakdownRequest(transactionalRequest);
+		return resp;
+	}
+	
+	@RequestMapping(value = "/updateBreakdownRequest", method = RequestMethod.POST, headers = "Accept=application/json")
+	public TransactionalResponse updateBreakdownRequest(@RequestBody String request) throws JsonParseException, JsonMappingException, IOException, CacheException {
+		TransactionalResponse resp = new TransactionalResponse();
+		LOGGER.debug("In Transaction Controller");
+		TransactionalRequest transactionalRequest=(TransactionalRequest) ObjectMapperUtil.mapRequestObj(request,TransactionalRequest.class);
+		resp=transactionalService.createNewBreakdownRequest(transactionalRequest);
+		return resp;
+	}
+	
+	@RequestMapping(value = "/getAllBreakdownRequest", method = RequestMethod.POST, headers = "Accept=application/json")
+	public TransactionalResponse getAllBreakdownRequest(@RequestBody String request) throws JsonParseException, JsonMappingException, IOException, CacheException {
 		TransactionalResponse resp = new TransactionalResponse();
 		LOGGER.debug("In Transaction Controller");
 		TransactionalRequest transactionalRequest=(TransactionalRequest) ObjectMapperUtil.mapRequestObj(request,TransactionalRequest.class);

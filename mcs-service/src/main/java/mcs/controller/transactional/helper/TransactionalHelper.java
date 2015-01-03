@@ -1,5 +1,6 @@
 package mcs.controller.transactional.helper;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import mcs.rest.dao.pojo.BreakdownRequest;
@@ -30,4 +31,17 @@ public class TransactionalHelper {
 		return workflowDao.createBreakdownRequest(breakdownRequest);
 	} 
 	
+
+	public boolean updateBreakdownRequest(BreakdownRequest breakdownRequest){
+		return workflowDao.updateBreakdownRequest(breakdownRequest);
+	} 
+
+	public BreakdownRequest getBreakdownRequestByID(BreakdownRequest breakdownRequest){
+		return workflowDao.getbreakdownrequestByID(breakdownRequest.getId().toString());
+	} 
+	
+
+	public ArrayList<BreakdownRequest> getBreakDownRequests(){
+		return workflowDao.getBreakDownRequests();
+	} 
 }

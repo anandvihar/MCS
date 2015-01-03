@@ -26,4 +26,35 @@ public class TransactionService {
 		
 	}
 	
+	
+	
+	
+public TransactionalResponse updateBreakdownRequest(TransactionalRequest transactionalRequest) throws CacheException{
+		TransactionalResponse resp=new TransactionalResponse();
+		transactionalHelper.getSessionAttributes(transactionalRequest.getSessionId());
+		resp.setSessionId(transactionalRequest.getSessionId());
+		transactionalHelper.updateBreakdownRequest(transactionalRequest.getBreakdownRequest());
+		return resp;
+		
+	}
+	
+
+public TransactionalResponse getBreakdownRequestByID(TransactionalRequest transactionalRequest) throws CacheException{
+	TransactionalResponse resp=new TransactionalResponse();
+	transactionalHelper.getSessionAttributes(transactionalRequest.getSessionId());
+	resp.setSessionId(transactionalRequest.getSessionId());
+	transactionalHelper.getBreakdownRequestByID(transactionalRequest.getBreakdownRequest());
+	return resp;
+	
+}
+
+public TransactionalResponse getAllBreakdownRequest(TransactionalRequest transactionalRequest) throws CacheException{
+	TransactionalResponse resp=new TransactionalResponse();
+	transactionalHelper.getSessionAttributes(transactionalRequest.getSessionId());
+	resp.setSessionId(transactionalRequest.getSessionId());
+	transactionalHelper.getBreakDownRequests();
+	return resp;
+	
+}
+
 }
